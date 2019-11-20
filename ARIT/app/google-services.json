@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "979028909250",
+    "firebase_url": "https://arit-37b7d.firebaseio.com",
+    "project_id": "arit-37b7d",
+    "storage_bucket": "arit-37b7d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:979028909250:android:00c5588358b9b25f376f5b",
+        "android_client_info": {
+          "package_name": "com.example.arit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "979028909250-nqmgcth623r1umf65bvpr8ju75qimjfn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.arit",
+            "certificate_hash": "4644d927caccbbdd9306df5c9642e046a526bbff"
+          }
+        },
+        {
+          "client_id": "979028909250-562vp3t7cimieh313vo8medsvj4emo2m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCw2aJ_MenbPNwXpNwSQved_BFp53QXpMk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "979028909250-562vp3t7cimieh313vo8medsvj4emo2m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
