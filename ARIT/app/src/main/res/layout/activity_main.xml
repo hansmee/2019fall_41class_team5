@@ -7,12 +7,100 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/signupText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="ARIT"
+
+        android:textSize="70dp"
+
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2" />
+    <LinearLayout
+        android:id="@+id/idlinear"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signupText"
+        app:layout_constraintVertical_bias="0.3"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:textAlignment="center">
+
+        <TextView
+            android:id="@+id/idText"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="ID"
+            android:textAlignment="center"
+            android:textSize="19dp"
+            android:textStyle="bold"
+            app:layout_constraintRight_toLeftOf="@+id/idEdit"
+            app:layout_constraintTop_toTopOf="@+id/idEdit" />
+
+        <EditText
+            android:id="@+id/idEdit"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Type your id"
+            android:inputType="text" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/pwlinear"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/idlinear"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.5">
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="PW"
+            android:textAlignment="center"
+            android:textSize="19dp"
+            android:textStyle="bold"
+            />
+        <EditText
+            android:id="@+id/passEdit"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Type your passwd"
+            android:inputType="textPassword"
+            />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Login"
+
+        app:layout_constraintTop_toBottomOf="@+id/pwlinear"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"/>
+    <Button
+        android:id="@+id/signupButton"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="SignUp"
+
+        app:layout_constraintTop_toBottomOf="@+id/pwlinear"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
+        />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
