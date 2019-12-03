@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="category">
+        <item >카테고리 선택</item>
+        <item >노트북</item>
+        <item >태블릿PC</item>
+        <item >데스크탑/본체</item>
+        <item >모니터</item>
+        <item >CPU/메인보드/RAM</item>
+        <item >키보드/마우스/스피커</item>
+        <item >기타</item>
+    </string-array>
+</resources>
