@@ -53,21 +53,13 @@ public class MainActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                check = false;
                 //v.startAnimation(buttonClick);
                 if (idEdit.getText() != null && passEdit.getText() != null) {
                     userId = idEdit.getText().toString();
                     userPass = passEdit.getText().toString();
-                    getUserDatabase();
-                    if (check == true) {
-                        intent.putExtra("currentId", userId);
-                        intent.putExtra("currentName", userName);
-                        startActivity(intent);
-                    } else {
-                        Toast.makeText(MainActivity.this, "Please check your id and password or try again", Toast.LENGTH_SHORT).show();
-                    }
-                    check = false;
-                } else {
-                    Toast.makeText(MainActivity.this, "Please check your id and password or try again", Toast.LENGTH_SHORT).show();
+                    getUserDatabase(intent);
+
                 }
             }
         });
@@ -82,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-    public void getUserDatabase() {
+    public void getUserDatabase(final Intent intent) {
         final ValueEventListener postListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -105,17 +97,27 @@ public class MainActivity extends AppCompatActivity {
                         else if((tempArray[i].charAt(0) == ' ' && tempArray[i].charAt(1) == 'i')){   ID = tempArray[i].substring(4);                         }
 
                         else if((tempArray[i].charAt(2) == 'a')){   userName = tempArray[i].substring(6);                         }
-                    }
 
+
+                    }
 
                     Log.e("TAG", "zero: " + PW + " one: " + ID);
 
-
                     if (userId.equals(ID) && userPass.equals(PW)) {
                         check = true;
+                        intent.putExtra("currentId", userId);
+                        intent.putExtra("currentName", userName);
+                        startActivity(intent);
                         break;
                     }
+
+
+
+
+
                 }
+                if(!check)
+                    Toast.makeText(MainActivity.this, "Please check your id and password or try again", Toast.LENGTH_SHORT).show();
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
