@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         uDatabase = FirebaseDatabase.getInstance().getReference("user");
         loginPref = this.getPreferences(Context.MODE_PRIVATE);
 
-        final Intent intent = new Intent(MainActivity.this, Home.class);
+        final Intent intent = new Intent(MainActivity.this, FrameLayout.class);
         final Intent intent2 = new Intent(MainActivity.this, SignIn.class);
 
 

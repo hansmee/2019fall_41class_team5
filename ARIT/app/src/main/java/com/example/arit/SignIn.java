@@ -40,7 +40,7 @@ public class SignIn extends AppCompatActivity {
 
 
         final Intent intent = new Intent(SignIn.this, MainActivity.class);
-        final Intent intent2 = new Intent(SignIn.this, Home.class);
+        final Intent intent2 = new Intent(SignIn.this, FrameLayout.class);
 
 
         cancelButton.setOnClickListener(new View.OnClickListener() {
