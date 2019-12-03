@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText idEdit, passEdit;
     Button loginButton, signupButton;
-    String userId, userPass;
+    String userId, userPass, userName;
     private DatabaseReference uDatabase;
     boolean check = false;
     SharedPreferences loginPref;
@@ -59,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
                     userPass = passEdit.getText().toString();
                     getUserDatabase();
                     if (check == true) {
+                        intent.putExtra("currentId", userId);
+                        intent.putExtra("currentName", userName);
                         startActivity(intent);
                     } else {
                         Toast.makeText(MainActivity.this, "Please check your id and password or try again", Toast.LENGTH_SHORT).show();
@@ -94,14 +96,15 @@ public class MainActivity extends AppCompatActivity {
 
                     String PW = "", ID = "";
 
-
                     for(int i = 0; i < 4; i++)
                     {
                         if(tempArray[i].charAt(0) == 'p'){                                             PW = tempArray[i].substring(3);                        }
                         else if((tempArray[i].charAt(0) == ' ' && tempArray[i].charAt(1) == 'p')){       PW = tempArray[i].substring(4);                      }
 
                         else if(tempArray[i].charAt(0) == 'i'){                                        ID = tempArray[i].substring(3);                        }
-                        else if( (tempArray[i].charAt(0) == ' ' && tempArray[i].charAt(1) == 'i')){   ID = tempArray[i].substring(4);                         }
+                        else if((tempArray[i].charAt(0) == ' ' && tempArray[i].charAt(1) == 'i')){   ID = tempArray[i].substring(4);                         }
+
+                        else if((tempArray[i].charAt(2) == 'a')){   userName = tempArray[i].substring(6);                         }
                     }
 
 
