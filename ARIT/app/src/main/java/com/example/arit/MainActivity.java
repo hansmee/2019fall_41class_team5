@@ -26,8 +26,8 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText idEdit;
-    EditText passEdit;
+    EditText idEdit;    //User ID
+    EditText passEdit;  //User PW
 
     Button loginButton;
     Button signupButton;
@@ -110,8 +110,7 @@ public class MainActivity extends AppCompatActivity {
                     Map<String, Object> map = snapshot.child("").getValue(genericTypeIndicator);
 
                     String tempStorage = map.toString();
-                    String temp2Storage = tempStorage.replaceAll("[{}]", "");
-                    String tempArray[] = temp2Storage.split(",");
+                    String tempArray[] = tempStorage.replaceAll("[{}]", "").split(",");
 
                     String PW = "", ID = "";
 

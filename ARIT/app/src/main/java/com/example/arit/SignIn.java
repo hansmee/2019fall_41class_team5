@@ -29,7 +29,7 @@ public class SignIn extends AppCompatActivity {
     EditText passEdit;
     EditText nameEdit;
     EditText phoneEdit;
-    
+
     Button singupButton;
     Button cancelButton;
 
@@ -77,45 +77,12 @@ public class SignIn extends AppCompatActivity {
         final ValueEventListener postListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    GenericTypeIndicator<Map<String, Object>> genericTypeIndicator = new GenericTypeIndicator<Map<String, Object>>() {};
-                    Map<String, Object> map = snapshot.child("").getValue(genericTypeIndicator);
 
-                    String tempStorage = map.toString();
-                    String temp2Storage = tempStorage.replaceAll("[{}]", "");
-                    String tempArray[] = temp2Storage.split(",");
-
-                    String ID = "";
-
-
-                    /////////////////////////////Extract ID/////////////////////////////////////////
-                    for(int i = 0; i < 4; i++)
-                    {
-                        if(tempArray[i].charAt(0) == 'i'){                                        ID = tempArray[i].substring(3);                        }
-                        else if((tempArray[i].charAt(0) == ' ' && tempArray[i].charAt(1) == 'i')){   ID = tempArray[i].substring(4);                         }
-
-                    }
-                    /////////////////////////////Extract ID/////////////////////////////////////////
-
-
-
-
-
-                    /////////////////Check for duplicate ID/////////////////////////////////////////
-                    if(ID.equals(testID)){
-                        exists = 1;
-                        if(flag == 0){   Toast.makeText(SignIn.this, "ID already exits", Toast.LENGTH_SHORT).show();        }
-                        break;
-                    }
-                    /////////////////Check for duplicate ID/////////////////////////////////////////
-
+                if (dataSnapshot.hasChild(testID) && testID.length() >= 2) {
+                    Toast.makeText(SignIn.this, "ID already exits", Toast.LENGTH_SHORT).show();
                 }
-
-
-
-
-                /////////////////////Check other categories/////////////////////////////////////////
-                if(exists == 0){
+                else
+                {
                     int check = checkSignup(testID, PW, NAME, PHONE);
 
                     if(check == 5){
@@ -128,22 +95,19 @@ public class SignIn extends AppCompatActivity {
                         return;
                     }
                     else{
-                        if(check == 0){  Toast.makeText(SignIn.this, "Please check ID and enter again", Toast.LENGTH_SHORT).show();    }
+                        if(check == 0){  Toast.makeText(SignIn.this, "ID must be at least 2 characters long", Toast.LENGTH_SHORT).show();    }
                         if(check == 1){  Toast.makeText(SignIn.this, "PW must be at least 8 characters and contain Capital, Lowercase, Number and Special Character", Toast.LENGTH_SHORT).show();    }
                         if(check == 2){  Toast.makeText(SignIn.this, "Please check Name and enter again", Toast.LENGTH_SHORT).show();    }
                         if(check == 3){  Toast.makeText(SignIn.this, "Enter a valid phone number", Toast.LENGTH_SHORT).show();    }
                     }
+
                 }
-                /////////////////////Check other categories/////////////////////////////////////////
 
 
 
             }
             @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Log.v("loger", "faile to read value");
-                Log.v("loger", databaseError.toString());
-            }
+            public void onCancelled(@NonNull DatabaseError databaseError) {}
         };
         uDatabase.addValueEventListener(postListener);
     }
