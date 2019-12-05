@@ -5,21 +5,10 @@
     android:layout_height="match_parent"
     tools:context=".CategoryFrag">
 
-    <LinearLayout
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:text="@string/hello_blank_fragment" />
 
-        <ListView
-            android:id="@+id/LargeCate"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"/>
-
-        <ListView
-            android:id="@+id/SmallCate"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"/>
-    </LinearLayout>
 </FrameLayout>
