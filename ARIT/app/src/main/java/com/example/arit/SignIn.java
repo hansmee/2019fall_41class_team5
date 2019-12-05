@@ -25,8 +25,15 @@ import java.util.regex.Pattern;
 
 public class SignIn extends AppCompatActivity {
 
-    EditText idEdit, passEdit, nameEdit, phoneEdit;
-    Button singupButton, cancelButton;
+    EditText idEdit;
+    EditText passEdit;
+    EditText nameEdit;
+    EditText phoneEdit;
+    
+    Button singupButton;
+    Button cancelButton;
+
+
     private DatabaseReference uDatabase;
     int exists = 0, flag = 0;
     @Override
@@ -131,7 +138,6 @@ public class SignIn extends AppCompatActivity {
 
 
 
-                Log.e("TAG", "When does this print");
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
@@ -158,6 +164,9 @@ public class SignIn extends AppCompatActivity {
 
 
 
+
+
+
         /////////////////////////////////Check Requirements/////////////////////////////////////////
         if(idEdit.length() >= 2)                        {           id++;          }
         if(passEdit.length() >= 2 && pwMatch.find())    {           pass++;        }
@@ -166,21 +175,28 @@ public class SignIn extends AppCompatActivity {
         /////////////////////////////////Check Requirements/////////////////////////////////////////
 
 
-        //If all requirements satisfied
+
+
+
+
+        /////////////////////////Return check value/////////////////////////////////////////////////
         if(id > 0 && pass > 0 && name > 0 && phone > 0){            return 5;        }
 
-        //return problem category
         else{
             if(id == 0){                return 0;            }
             else if(pass == 0){         return 1;             }
             else if(name == 0){         return 2;            }
             else if(phone == 0){        return 3;            }
         }
-
         return 5;
+        /////////////////////////Return check value/////////////////////////////////////////////////
     }
 
 
+
+
+
+    //////////////////////Post new user info to firebase////////////////////////////////////////////
     public void postUserInfo(String one, String two, String three, String four) {
 
         Map<String, Object> userUpdates = new HashMap<>();
@@ -206,7 +222,7 @@ public class SignIn extends AppCompatActivity {
         nameEdit.setText("");
         phoneEdit.setText("");
     }
-
+    //////////////////////Post new user info to firebase////////////////////////////////////////////
 
 
 

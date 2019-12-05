@@ -26,12 +26,19 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText idEdit, passEdit;
-    Button loginButton, signupButton;
-    String userId, userPass, userName;
+    EditText idEdit;
+    EditText passEdit;
+
+    Button loginButton;
+    Button signupButton;
+    String userId;
+    String userPass;
+    String userName;
+
+
     private DatabaseReference uDatabase;
-    boolean check = false;
     SharedPreferences loginPref;
+    boolean check = false;
     private AlphaAnimation buttonClick = new AlphaAnimation(1F, 0.7F);
 
     @Override
@@ -46,8 +53,28 @@ public class MainActivity extends AppCompatActivity {
         uDatabase = FirebaseDatabase.getInstance().getReference("user");
         loginPref = this.getPreferences(Context.MODE_PRIVATE);
 
-        final Intent intent = new Intent(MainActivity.this, FrameLayout.class);
+
+        final Intent intent = new Intent(MainActivity.this, Home.class);
         final Intent intent2 = new Intent(MainActivity.this, SignIn.class);
+
+
+
+        ///////////////////////////////Check preference/////////////////////////////////////////////
+        final SharedPreferences.Editor editor = loginPref.edit();
+        String idValue = loginPref.getString("userid", null);
+        if (getIntent().getStringExtra("logout") != null && getIntent().getStringExtra("logout").equals("Logout")) {
+            editor.clear();
+            editor.commit();
+        }
+        if (idValue != null) {
+            intent.putExtra("currentId", idValue);
+            intent.putExtra("currentName", idValue);
+            startActivity(intent);
+            finish();
+        }
+        ///////////////////////////////Check preference/////////////////////////////////////////////
+
+
 
 
         loginButton.setOnClickListener(new View.OnClickListener() {
@@ -58,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                 if (idEdit.getText() != null && passEdit.getText() != null) {
                     userId = idEdit.getText().toString();
                     userPass = passEdit.getText().toString();
-                    getUserDatabase(intent);
+                    getUserDatabase(intent, editor);
 
                 }
             }
@@ -74,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-    public void getUserDatabase(final Intent intent) {
+    public void getUserDatabase(final Intent intent, final SharedPreferences.Editor editor) {
         final ValueEventListener postListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -105,14 +132,15 @@ public class MainActivity extends AppCompatActivity {
 
                     if (userId.equals(ID) && userPass.equals(PW)) {
                         check = true;
+                        editor.putString("userid", ID);
+                        editor.putString("userName", userName);
+                        editor.commit();
+
                         intent.putExtra("currentId", userId);
                         intent.putExtra("currentName", userName);
                         startActivity(intent);
                         break;
                     }
-
-
-
 
 
                 }
