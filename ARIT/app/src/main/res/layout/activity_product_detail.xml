@@ -9,72 +9,73 @@
     tools:context=".ProductDetail">
 
     <LinearLayout
-        android:orientation="vertical"
+        android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:textSize="23dp"
-            android:textAlignment="center"/>
+            android:textAlignment="center"
+            android:textSize="23dp" />
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="3dp"
-            android:background="#FDEEC7">
+            android:layout_height="407dp"
+            android:background="#FDEEC7"
+            android:padding="3dp">
 
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:background="@android:color/white">
+                android:background="@android:color/white"
+                android:orientation="vertical"
+                android:padding="10dp">
 
                 <ImageView
                     android:id="@+id/image"
-                    android:src="@drawable/picture"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:layout_gravity="center"
-                    android:maxHeight="180dp" />
+                    android:maxHeight="180dp"
+                    android:src="@drawable/picture" />
 
                 <TextView
                     android:id="@+id/uname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:textSize="17dp"/>
+                    android:textSize="17dp" />
 
                 <TextView
                     android:id="@+id/pname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:textSize="17dp"
-                    android:textColor="#0B4C5F"/>
+                    android:textColor="#0B4C5F"
+                    android:textSize="17dp" />
 
                 <TextView
                     android:id="@+id/price"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:textSize="17dp"
-                    android:textColor="#0B4C5F"/>
+                    android:textColor="#0B4C5F"
+                    android:textSize="17dp" />
 
                 <TextView
                     android:id="@+id/howto"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:textSize="17dp"
-                    android:textColor="#0B4C5F"/>
+                    android:textColor="#0B4C5F"
+                    android:textSize="17dp" />
 
 
                 <TextView
@@ -82,28 +83,57 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:textSize="17dp"
-                    android:textColor="#808080"/>
+                    android:textColor="#808080"
+                    android:textSize="17dp" />
 
                 <TextView
                     android:id="@+id/contact"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:textSize="17dp"
-                    android:textColor="#808080"/>
+                    android:textColor="#808080"
+                    android:textSize="17dp" />
 
                 <TextView
                     android:id="@+id/detail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:textSize="17dp"
-                    android:textColor="#808080"/>
+                    android:textColor="#808080"
+                    android:textSize="17dp" />
+
+                <TextView
+                    android:id="@+id/comments"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#808080"
+                    android:textSize="17dp" />
 
             </LinearLayout>
 
         </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/linearLayout5"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/commentEdit"
+                android:layout_width="266dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Enter a comment"
+                android:inputType="textPersonName" />
+
+            <Button
+                android:id="@+id/commentButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Post" />
+        </LinearLayout>
 
     </LinearLayout>
 
