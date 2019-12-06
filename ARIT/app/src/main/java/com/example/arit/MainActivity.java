@@ -58,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
         final Intent intent2 = new Intent(MainActivity.this, SignIn.class);
 
 
-
         ///////////////////////////////Check preference/////////////////////////////////////////////
         final SharedPreferences.Editor editor = loginPref.edit();
         String idValue = loginPref.getString("userid", null);

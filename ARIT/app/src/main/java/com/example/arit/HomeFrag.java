@@ -32,30 +32,31 @@ public class HomeFrag extends Fragment {
         // Required empty public constructor
     }
 
-    View view;
 
-    Button post_btn;
-    String currentId;
-    String currentName;
-    Intent intent, intent2;
-
-    ListView recent;
-    ArrayList<ProductItem> products;
-    ProductAdapter productAdapter;
-
-    private DatabaseReference mPostReference;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_home, container, false);
+        final View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        currentId = getActivity().getIntent().getStringExtra("currentId");
-        currentName = getActivity().getIntent().getStringExtra("currentName");
+        Bundle extra = this.getArguments();
+        String currentId;
+        String currentName;
 
-        recent = getActivity().findViewById(R.id.recent_list);
-        products = new ArrayList<>();
+        if(extra != null){
+            currentId = extra.getString("currentId");
+            currentName = extra.getString("currentName");
+        }
+
+        final ListView recent = view.findViewById(R.id.recent_list);
+        final ArrayList<ProductItem> products = new ArrayList<>();
+        //final ProductAdapter productAdapter;
+
+        DatabaseReference mPostReference;
+
+        Bundle bundle;
+
 
         // 최신 글 띄우기 (리스트 뷰 업데이트)
         mPostReference = FirebaseDatabase.getInstance().getReference().child("product");
@@ -66,13 +67,13 @@ public class HomeFrag extends Fragment {
                 for(DataSnapshot item : dataSnapshot.getChildren()){
                     products.add(0,item.getValue(ProductItem.class));
                 }
-                productAdapter = new ProductAdapter(getActivity().getApplicationContext(), products);
+                ProductAdapter productAdapter = new ProductAdapter(view.getContext(), products);
                 recent.setAdapter(productAdapter);
                 recent.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
                         // 해당 글 클릭하면 상세 정보 화면으로 넘어가도록 (ProductDetail.java)
-                        intent = new Intent(getActivity().getApplicationContext(), ProductDetail.class);
+                        /*intent = new Intent(getActivity().getApplicationContext(), ProductDetail.class);
                         intent.putExtra("currentID", currentId);
                         intent.putExtra("currentName", currentName);
                         intent.putExtra("title", products.get(i).getTitle());
@@ -83,7 +84,7 @@ public class HomeFrag extends Fragment {
                         intent.putExtra("contact", products.get(i).getContact());
                         intent.putExtra("detail",products.get(i).getDetail());
                         intent.putExtra("imagename", products.get(i).getImagename());
-                        startActivity(intent);
+                        startActivity(intent);*/
                     }
                 });
             }
@@ -93,13 +94,13 @@ public class HomeFrag extends Fragment {
         });
 
         // POST 버튼
-        post_btn = getActivity().findViewById(R.id.post);
+        Button post_btn = view.findViewById(R.id.post);
         post_btn.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v){
-                intent2 = new Intent(getActivity(), Post.class);
+                /*intent2 = new Intent(getActivity(), Post.class);
                 intent2.putExtra("currentId", currentId);
                 intent2.putExtra("currentName", currentName);
-                startActivity(intent2);
+                startActivity(intent2);*/
             }
         });
 

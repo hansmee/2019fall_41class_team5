@@ -1113,6 +1113,7 @@ drawable ic_launcher_foreground
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable logo
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
@@ -1198,6 +1199,9 @@ id circular
 id clip_horizontal
 id clip_vertical
 id collapseActionView
+id commentButton
+id commentEdit
+id comments
 id confirmation_code
 id confirmation_code_layout
 id contact
@@ -1284,6 +1288,8 @@ id line1
 id line3
 id linear
 id linearLayout2
+id linearLayout4
+id linearLayout5
 id listMode
 id list_item
 id loginButton

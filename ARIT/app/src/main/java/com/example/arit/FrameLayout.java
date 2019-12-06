@@ -3,6 +3,7 @@ package com.example.arit;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +17,12 @@ public class FrameLayout extends AppCompatActivity implements View.OnClickListen
     private final int Frag4 = 4;
 
     Button btn_tab1, btn_tab2, btn_tab3, btn_tab4;
+
+    Intent intent;
+    String currentId;
+    String currentName;
+
+    Bundle bundle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +38,15 @@ public class FrameLayout extends AppCompatActivity implements View.OnClickListen
         btn_tab2.setOnClickListener(this);
         btn_tab3.setOnClickListener(this);
         btn_tab4.setOnClickListener(this);
+
+
+        intent = getIntent();
+        currentId = intent.getStringExtra("currentId");
+        currentName = intent.getStringExtra("currentName");
+
+        bundle = new Bundle();
+        bundle.putString("currentId", currentId);
+        bundle.putString("currentName", currentName);
 
         callFragment(Frag1);
     }
@@ -62,6 +78,7 @@ public class FrameLayout extends AppCompatActivity implements View.OnClickListen
                 HomeFrag homeFrag = new HomeFrag();
                 transaction.replace(R.id.fragmentContainer, homeFrag);
                 transaction.commit();
+                homeFrag.setArguments(bundle);
                 break;
 
             case 2 :
@@ -69,6 +86,7 @@ public class FrameLayout extends AppCompatActivity implements View.OnClickListen
                 CategoryFrag categoryFrag = new CategoryFrag();
                 transaction.replace(R.id.fragmentContainer, categoryFrag);
                 transaction.commit();
+                categoryFrag.setArguments(bundle);
                 break;
 
             case 3 :
@@ -76,6 +94,7 @@ public class FrameLayout extends AppCompatActivity implements View.OnClickListen
                 SearchFrag searchFrag = new SearchFrag();
                 transaction.replace(R.id.fragmentContainer, searchFrag);
                 transaction.commit();
+                searchFrag.setArguments(bundle);
                 break;
 
             case 4 :
@@ -83,6 +102,7 @@ public class FrameLayout extends AppCompatActivity implements View.OnClickListen
                 MypageFrag mypageFrag = new MypageFrag();
                 transaction.replace(R.id.fragmentContainer, mypageFrag);
                 transaction.commit();
+                mypageFrag.setArguments(bundle);
                 break;
 
         }
