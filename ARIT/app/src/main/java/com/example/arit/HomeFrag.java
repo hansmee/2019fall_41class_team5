@@ -32,7 +32,9 @@ public class HomeFrag extends Fragment {
         // Required empty public constructor
     }
 
-     Button post_btn;
+    View view;
+
+    Button post_btn;
     String currentId;
     String currentName;
     Intent intent, intent2;
@@ -47,7 +49,7 @@ public class HomeFrag extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        view = inflater.inflate(R.layout.fragment_home, container, false);
 
         currentId = getActivity().getIntent().getStringExtra("currentId");
         currentName = getActivity().getIntent().getStringExtra("currentName");
@@ -100,6 +102,9 @@ public class HomeFrag extends Fragment {
                 startActivity(intent2);
             }
         });
+
+
+        return view;
     }
 
 }

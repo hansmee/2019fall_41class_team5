@@ -1493,15 +1493,11 @@ layout activity_armeasure
 layout activity_armode
 layout activity_frame_layout
 layout activity_home
-layout activity_large_cate
 layout activity_main
-layout activity_my_page
 layout activity_personal_post
 layout activity_post
 layout activity_product_detail
-layout activity_search
 layout activity_sign_in
-layout activity_small_cate
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
 layout design_bottom_navigation_item
