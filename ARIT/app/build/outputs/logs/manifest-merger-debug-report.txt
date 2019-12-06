@@ -17,6 +17,10 @@ MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\hyunmook\.gradle\
 MERGED from [com.google.firebase:firebase-auth:19.2.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\4c05444f12eca45675b5d4ded5b0e7c0\firebase-auth-19.2.0\AndroidManifest.xml:17:1-42:12
 MERGED from [com.google.firebase:firebase-storage:19.1.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\1db2d38b309a85c11f57219f5bbd1ccf\firebase-storage-19.1.0\AndroidManifest.xml:15:1-39:12
 MERGED from [com.github.bumptech.glide:glide:4.10.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\8da81b3a8ec8893a3902b16f3a6f71ed\glide-4.10.0\AndroidManifest.xml:2:1-12:12
+MERGED from [com.google.ar.sceneform.ux:sceneform-ux:1.13.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\286b2cb9357fc7bb6156b0e9fa595987\jetified-sceneform-ux-1.13.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.ar.sceneform:core:1.13.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\06abefc1c67d0b8cd75c85aac99a4897\jetified-core-1.13.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.ar.sceneform:rendering:1.13.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\e0519f8203563b115865956687b893f0\jetified-rendering-1.13.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.ar:core:1.13.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\77d118d299b1c415885d74ad77498034\core-1.13.0\AndroidManifest.xml:17:1-46:12
 MERGED from [com.google.android.gms:play-services-measurement:17.2.1] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\f850f032f32e5a254783332061c80ee1\play-services-measurement-17.2.1\AndroidManifest.xml:17:1-55:12
 MERGED from [com.google.android.gms:play-services-measurement-api:17.2.1] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\3e3cdd4175eb3827483caa9c75f911c9\play-services-measurement-api-17.2.1\AndroidManifest.xml:17:1-36:12
 MERGED from [com.google.android.gms:play-services-measurement-sdk:17.2.1] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\1f88eb2be9a38f314bd7e75a915f6c52\play-services-measurement-sdk-17.2.1\AndroidManifest.xml:17:1-25:12
@@ -73,6 +77,8 @@ MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\hyunmook\.gra
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\07a10a0cead9a447f78103e8d38f9b9b\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\5351ba69d53acfbae58340a136c409ac\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-database-collection:17.0.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\a1c42ee6a43c1fec1cd0f12b759d080b\firebase-database-collection-17.0.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.ar.sceneform:sceneform-base:1.13.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\2266fa0001d65c6dc576fe7566cc9185\jetified-sceneform-base-1.13.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.ar.sceneform:filament-android:1.13.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\c2645b56b96e9e44becbfd8fb0e94209\jetified-filament-android-1.13.0\AndroidManifest.xml:2:1-11:12
 INJECTED from C:\Users\hyunmook\Documents\GitHub\2019fall_41class_team5_2\ARIT\app\src\main\AndroidManifest.xml:2:1-33:12
 INJECTED from C:\Users\hyunmook\Documents\GitHub\2019fall_41class_team5_2\ARIT\app\src\main\AndroidManifest.xml:2:1-33:12
 INJECTED from C:\Users\hyunmook\Documents\GitHub\2019fall_41class_team5_2\ARIT\app\src\main\AndroidManifest.xml:2:1-33:12
@@ -122,6 +128,8 @@ MERGED from [com.google.firebase:firebase-storage:19.1.0] C:\Users\hyunmook\.gra
 MERGED from [com.google.firebase:firebase-storage:19.1.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\1db2d38b309a85c11f57219f5bbd1ccf\firebase-storage-19.1.0\AndroidManifest.xml:29:5-37:19
 MERGED from [com.github.bumptech.glide:glide:4.10.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\8da81b3a8ec8893a3902b16f3a6f71ed\glide-4.10.0\AndroidManifest.xml:10:5-20
 MERGED from [com.github.bumptech.glide:glide:4.10.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\8da81b3a8ec8893a3902b16f3a6f71ed\glide-4.10.0\AndroidManifest.xml:10:5-20
+MERGED from [com.google.ar:core:1.13.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\77d118d299b1c415885d74ad77498034\core-1.13.0\AndroidManifest.xml:30:5-44:19
+MERGED from [com.google.ar:core:1.13.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\77d118d299b1c415885d74ad77498034\core-1.13.0\AndroidManifest.xml:30:5-44:19
 MERGED from [com.google.android.gms:play-services-measurement:17.2.1] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\f850f032f32e5a254783332061c80ee1\play-services-measurement-17.2.1\AndroidManifest.xml:28:5-53:19
 MERGED from [com.google.android.gms:play-services-measurement:17.2.1] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\f850f032f32e5a254783332061c80ee1\play-services-measurement-17.2.1\AndroidManifest.xml:28:5-53:19
 MERGED from [com.google.android.gms:play-services-measurement-api:17.2.1] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\3e3cdd4175eb3827483caa9c75f911c9\play-services-measurement-api-17.2.1\AndroidManifest.xml:26:5-34:19
@@ -254,6 +262,14 @@ MERGED from [com.google.firebase:firebase-storage:19.1.0] C:\Users\hyunmook\.gra
 MERGED from [com.google.firebase:firebase-storage:19.1.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\1db2d38b309a85c11f57219f5bbd1ccf\firebase-storage-19.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [com.github.bumptech.glide:glide:4.10.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\8da81b3a8ec8893a3902b16f3a6f71ed\glide-4.10.0\AndroidManifest.xml:6:5-8:41
 MERGED from [com.github.bumptech.glide:glide:4.10.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\8da81b3a8ec8893a3902b16f3a6f71ed\glide-4.10.0\AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.ar.sceneform.ux:sceneform-ux:1.13.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\286b2cb9357fc7bb6156b0e9fa595987\jetified-sceneform-ux-1.13.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.ar.sceneform.ux:sceneform-ux:1.13.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\286b2cb9357fc7bb6156b0e9fa595987\jetified-sceneform-ux-1.13.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.ar.sceneform:core:1.13.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\06abefc1c67d0b8cd75c85aac99a4897\jetified-core-1.13.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.ar.sceneform:core:1.13.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\06abefc1c67d0b8cd75c85aac99a4897\jetified-core-1.13.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.ar.sceneform:rendering:1.13.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\e0519f8203563b115865956687b893f0\jetified-rendering-1.13.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.ar.sceneform:rendering:1.13.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\e0519f8203563b115865956687b893f0\jetified-rendering-1.13.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.ar:core:1.13.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\77d118d299b1c415885d74ad77498034\core-1.13.0\AndroidManifest.xml:26:5-28:41
+MERGED from [com.google.ar:core:1.13.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\77d118d299b1c415885d74ad77498034\core-1.13.0\AndroidManifest.xml:26:5-28:41
 MERGED from [com.google.android.gms:play-services-measurement:17.2.1] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\f850f032f32e5a254783332061c80ee1\play-services-measurement-17.2.1\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-measurement:17.2.1] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\f850f032f32e5a254783332061c80ee1\play-services-measurement-17.2.1\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-measurement-api:17.2.1] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\3e3cdd4175eb3827483caa9c75f911c9\play-services-measurement-api-17.2.1\AndroidManifest.xml:20:5-44
@@ -366,6 +382,10 @@ MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\hyunmook\.gradle\ca
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\5351ba69d53acfbae58340a136c409ac\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-database-collection:17.0.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\a1c42ee6a43c1fec1cd0f12b759d080b\firebase-database-collection-17.0.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-database-collection:17.0.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\a1c42ee6a43c1fec1cd0f12b759d080b\firebase-database-collection-17.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.ar.sceneform:sceneform-base:1.13.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\2266fa0001d65c6dc576fe7566cc9185\jetified-sceneform-base-1.13.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.ar.sceneform:sceneform-base:1.13.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\2266fa0001d65c6dc576fe7566cc9185\jetified-sceneform-base-1.13.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.ar.sceneform:filament-android:1.13.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\c2645b56b96e9e44becbfd8fb0e94209\jetified-filament-android-1.13.0\AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.ar.sceneform:filament-android:1.13.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\c2645b56b96e9e44becbfd8fb0e94209\jetified-filament-android-1.13.0\AndroidManifest.xml:7:5-9:41
 INJECTED from C:\Users\hyunmook\Documents\GitHub\2019fall_41class_team5_2\ARIT\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\hyunmook\Documents\GitHub\2019fall_41class_team5_2\ARIT\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
@@ -648,6 +668,26 @@ ADDED from [com.google.firebase:firebase-storage:19.1.0] C:\Users\hyunmook\.grad
 		ADDED from [com.google.firebase:firebase-storage:19.1.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\1db2d38b309a85c11f57219f5bbd1ccf\firebase-storage-19.1.0\AndroidManifest.xml:35:17-82
 	android:name
 		ADDED from [com.google.firebase:firebase-storage:19.1.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\1db2d38b309a85c11f57219f5bbd1ccf\firebase-storage-19.1.0\AndroidManifest.xml:34:17-107
+meta-data#com.google.ar.core.min_apk_version
+ADDED from [com.google.ar:core:1.13.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\77d118d299b1c415885d74ad77498034\core-1.13.0\AndroidManifest.xml:33:9-35:41
+	android:value
+		ADDED from [com.google.ar:core:1.13.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\77d118d299b1c415885d74ad77498034\core-1.13.0\AndroidManifest.xml:35:13-38
+	android:name
+		ADDED from [com.google.ar:core:1.13.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\77d118d299b1c415885d74ad77498034\core-1.13.0\AndroidManifest.xml:34:13-62
+activity#com.google.ar.core.InstallActivity
+ADDED from [com.google.ar:core:1.13.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\77d118d299b1c415885d74ad77498034\core-1.13.0\AndroidManifest.xml:37:9-43:80
+	android:excludeFromRecents
+		ADDED from [com.google.ar:core:1.13.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\77d118d299b1c415885d74ad77498034\core-1.13.0\AndroidManifest.xml:40:13-46
+	android:launchMode
+		ADDED from [com.google.ar:core:1.13.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\77d118d299b1c415885d74ad77498034\core-1.13.0\AndroidManifest.xml:42:13-43
+	android:exported
+		ADDED from [com.google.ar:core:1.13.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\77d118d299b1c415885d74ad77498034\core-1.13.0\AndroidManifest.xml:41:13-37
+	android:configChanges
+		ADDED from [com.google.ar:core:1.13.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\77d118d299b1c415885d74ad77498034\core-1.13.0\AndroidManifest.xml:39:13-74
+	android:theme
+		ADDED from [com.google.ar:core:1.13.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\77d118d299b1c415885d74ad77498034\core-1.13.0\AndroidManifest.xml:43:13-77
+	android:name
+		ADDED from [com.google.ar:core:1.13.0] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\77d118d299b1c415885d74ad77498034\core-1.13.0\AndroidManifest.xml:38:13-62
 uses-permission#android.permission.WAKE_LOCK
 ADDED from [com.google.android.gms:play-services-measurement:17.2.1] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\f850f032f32e5a254783332061c80ee1\play-services-measurement-17.2.1\AndroidManifest.xml:25:5-68
 MERGED from [com.google.android.gms:play-services-measurement-api:17.2.1] C:\Users\hyunmook\.gradle\caches\transforms-2\files-2.1\3e3cdd4175eb3827483caa9c75f911c9\play-services-measurement-api-17.2.1\AndroidManifest.xml:24:5-68

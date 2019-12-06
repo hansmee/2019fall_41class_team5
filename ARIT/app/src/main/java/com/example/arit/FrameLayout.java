@@ -1,6 +1,7 @@
 package com.example.arit;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
@@ -106,5 +107,12 @@ public class FrameLayout extends AppCompatActivity implements View.OnClickListen
                 break;
 
         }
+    }
+    public void changeFragment(Fragment fragment, Bundle bundle){
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragmentContainer, fragment);
+        transaction.commit();
+        fragment.setArguments(bundle);
+
     }
 }
