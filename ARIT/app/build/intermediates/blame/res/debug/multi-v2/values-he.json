@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\hyunmook\\Documents\\GitHub\\2019fall_41class_team5_2\\ARIT\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-he\\values-he.xml",
+            "outputFile": "/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-he/values-he.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\hyunmook\\.gradle\\caches\\transforms-2\\files-2.1\\77d118d299b1c415885d74ad77498034\\core-1.13.0\\res\\values-he\\values.xml",
+                    "source": "/Users/hansangmee/.gradle/caches/transforms-2/files-2.1/77d118d299b1c415885d74ad77498034/core-1.13.0/res/values-he/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8",
                         "startColumns": "0,0,0,0,0",
