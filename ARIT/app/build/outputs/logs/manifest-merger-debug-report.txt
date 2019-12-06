@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:2:1-33:12
-INJECTED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:2:1-33:12
-INJECTED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:2:1-33:12
-INJECTED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:2:1-33:12
+ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:2:1-38:12
+INJECTED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:2:1-38:12
+INJECTED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:2:1-38:12
+INJECTED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:2:1-38:12
 MERGED from [com.firebaseui:firebase-ui-auth:5.0.0] /Users/hansangmee/.gradle/caches/transforms-2/files-2.1/2fa2decff341b45128a76f29cdd9b6f1/jetified-firebase-ui-auth-5.0.0/AndroidManifest.xml:2:1-109:12
 MERGED from [me.zhanghai.android.materialprogressbar:library:1.4.2] /Users/hansangmee/.gradle/caches/transforms-2/files-2.1/c4875b8fef58d37454b6c754aa5fd153/jetified-library-1.4.2/AndroidManifest.xml:6:1-16:12
 MERGED from [com.google.android.material:material:1.0.0] /Users/hansangmee/.gradle/caches/transforms-2/files-2.1/3df2fd68af0236fb7b1a24eeed8b503b/material-1.0.0/AndroidManifest.xml:17:1-24:12
@@ -79,20 +79,20 @@ MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/hansangmee/.gradle/ca
 MERGED from [com.google.firebase:firebase-database-collection:17.0.0] /Users/hansangmee/.gradle/caches/transforms-2/files-2.1/a1c42ee6a43c1fec1cd0f12b759d080b/firebase-database-collection-17.0.0/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.ar.sceneform:sceneform-base:1.13.0] /Users/hansangmee/.gradle/caches/transforms-2/files-2.1/102f98332b97663c98afaec50527ea90/jetified-sceneform-base-1.13.0/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.ar.sceneform:filament-android:1.13.0] /Users/hansangmee/.gradle/caches/transforms-2/files-2.1/ead896f42be6ec451eef9f195e520323/jetified-filament-android-1.13.0/AndroidManifest.xml:2:1-11:12
-INJECTED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:2:1-33:12
-INJECTED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:2:1-33:12
-INJECTED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:2:1-38:12
+INJECTED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:2:1-38:12
+INJECTED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:2:1-38:12
 	package
 		ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:3:5-31
 		INJECTED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml
-		ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:2:1-33:12
+		ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:2:1-38:12
 		INJECTED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml
-		ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:2:1-33:12
+		ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:2:1-38:12
 		INJECTED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:2:11-69
@@ -109,7 +109,7 @@ ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/A
 	android:name
 		ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:7:22-62
 application
-ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:9:5-31:19
+ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:9:5-36:19
 MERGED from [com.firebaseui:firebase-ui-auth:5.0.0] /Users/hansangmee/.gradle/caches/transforms-2/files-2.1/2fa2decff341b45128a76f29cdd9b6f1/jetified-firebase-ui-auth-5.0.0/AndroidManifest.xml:15:5-107:19
 MERGED from [com.firebaseui:firebase-ui-auth:5.0.0] /Users/hansangmee/.gradle/caches/transforms-2/files-2.1/2fa2decff341b45128a76f29cdd9b6f1/jetified-firebase-ui-auth-5.0.0/AndroidManifest.xml:15:5-107:19
 MERGED from [com.google.android.material:material:1.0.0] /Users/hansangmee/.gradle/caches/transforms-2/files-2.1/3df2fd68af0236fb7b1a24eeed8b503b/material-1.0.0/AndroidManifest.xml:22:5-20
@@ -186,52 +186,58 @@ MERGED from [androidx.lifecycle:lifecycle-process:2.0.0] /Users/hansangmee/.grad
 		ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:10:9-35
 	android:theme
 		ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:15:9-40
+meta-data#com.google.ar.core
+ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:17:9-19:40
+	android:value
+		ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:19:13-37
+	android:name
+		ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:18:13-46
 activity#com.example.arit.ProductDetail
-ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:16:9-60
+ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:21:9-60
 	android:name
-		ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:16:19-48
+		ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:21:19-48
 activity#com.example.arit.FrameLayout
-ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:17:9-49
+ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:22:9-49
 	android:name
-		ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:17:19-46
+		ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:22:19-46
 activity#com.example.arit.PersonalPost
-ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:18:9-50
+ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:23:9-50
 	android:name
-		ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:18:19-47
+		ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:23:19-47
 activity#com.example.arit.ARMeasure
-ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:19:9-47
+ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:24:9-47
 	android:name
-		ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:19:19-44
+		ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:24:19-44
 activity#com.example.arit.Post
-ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:20:9-42
+ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:25:9-42
 	android:name
-		ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:20:19-39
+		ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:25:19-39
 activity#com.example.arit.ARMode
-ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:21:9-44
+ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:26:9-44
 	android:name
-		ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:21:19-41
+		ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:26:19-41
 activity#com.example.arit.Home
-ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:22:9-42
+ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:27:9-42
 	android:name
-		ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:22:19-39
+		ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:27:19-39
 activity#com.example.arit.SignUp
-ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:23:9-44
+ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:28:9-44
 	android:name
-		ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:23:19-41
+		ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:28:19-41
 activity#com.example.arit.MainActivity
-ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:24:9-30:20
+ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:29:9-35:20
 	android:name
-		ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:24:19-47
+		ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:29:19-47
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:25:13-29:29
+ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:30:13-34:29
 action#android.intent.action.MAIN
-ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:26:17-69
+ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:31:17-69
 	android:name
-		ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:26:25-66
+		ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:31:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:28:17-77
+ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:33:17-77
 	android:name
-		ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:28:27-74
+		ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:33:27-74
 uses-sdk
 INJECTED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml

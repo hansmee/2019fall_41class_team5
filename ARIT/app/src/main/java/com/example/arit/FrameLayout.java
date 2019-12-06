@@ -2,14 +2,19 @@ package com.example.arit;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ListView;
 
 
 public class FrameLayout extends AppCompatActivity implements View.OnClickListener{
@@ -26,6 +31,9 @@ public class FrameLayout extends AppCompatActivity implements View.OnClickListen
     String currentName;
 
     Bundle bundle;
+
+    ArrayAdapter adapter;
+    ListView category_menu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +65,8 @@ public class FrameLayout extends AppCompatActivity implements View.OnClickListen
         bundle.putString("currentName", currentName);
 
         callFragment(Frag1);
+
+
     }
 
     @Override

@@ -1120,6 +1120,7 @@ drawable ic_launcher_foreground
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable list
 drawable logo
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
@@ -1244,6 +1245,8 @@ id detail
 id dimensions
 id direct
 id disableHome
+id drawer
+id drawerlist
 id dynamic
 id edit_phone_number
 id edit_query
@@ -1311,10 +1314,12 @@ id linear
 id linearLayout2
 id linearLayout4
 id linearLayout5
+id list
 id listMode
 id list_item
 id loginButton
 id logo
+id main_text
 id main_tos_and_pp
 id masked
 id media_actions
@@ -2051,6 +2056,8 @@ style FirebaseUI_TopProgressBar
 style FirebaseUI_Transparent
 style FirebaseUI_VerifyPhoneButton
 style FirebaseUI_WrapperStyle
+style FontButton
+style FontText
 style Platform_AppCompat
 style Platform_AppCompat_Light
 style Platform_MaterialComponents

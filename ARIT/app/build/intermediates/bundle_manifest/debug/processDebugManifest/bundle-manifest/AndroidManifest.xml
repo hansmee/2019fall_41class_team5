@@ -27,6 +27,10 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <meta-data
+            android:name="com.google.ar.core"
+            android:value="required" />
+
         <activity android:name="com.example.arit.ProductDetail" />
         <activity android:name="com.example.arit.FrameLayout" />
         <activity android:name="com.example.arit.PersonalPost" />

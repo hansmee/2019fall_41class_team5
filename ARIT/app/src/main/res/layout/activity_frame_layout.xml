@@ -12,13 +12,11 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/black"
-
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
 
     </FrameLayout>
 
@@ -26,55 +24,51 @@
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:gravity="bottom"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fragmentContainer">
+        android:gravity="bottom"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <ImageButton
             android:id="@+id/homebtn"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_weight="1"
+            android:background="@drawable/selector"
             android:maxWidth="50dp"
             android:padding="5dp"
-            android:src="@drawable/home"
-            android:background="@drawable/selector"
-            android:scaleType="fitCenter"/>
+            android:scaleType="fitCenter"
+            android:src="@drawable/home" />
 
         <ImageButton
             android:id="@+id/postbtn"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_weight="1"
-            android:padding="5dp"
-            android:src="@drawable/plus"
             android:background="@drawable/selector"
-            android:scaleType="fitCenter" />
+            android:padding="5dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/plus" />
 
         <ImageButton
             android:id="@+id/searchbtn"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_weight="1"
-            android:padding="5dp"
-            android:src="@drawable/search"
             android:background="@drawable/selector"
-            android:scaleType="fitCenter" />
+            android:padding="5dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/search" />
 
         <ImageButton
             android:id="@+id/mypagebtn"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_weight="1"
-            android:padding="5dp"
-            android:src="@drawable/mypage"
             android:background="@drawable/selector"
-            android:scaleType="fitCenter"/>
+            android:padding="5dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/mypage" />
     </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
