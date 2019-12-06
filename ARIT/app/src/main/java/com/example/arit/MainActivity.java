@@ -62,13 +62,15 @@ public class MainActivity extends AppCompatActivity {
         ///////////////////////////////Check preference/////////////////////////////////////////////
         final SharedPreferences.Editor editor = loginPref.edit();
         String idValue = loginPref.getString("userid", null);
+        String nameVal = loginPref.getString("userName", null);
+
         if (getIntent().getStringExtra("logout") != null && getIntent().getStringExtra("logout").equals("Logout")) {
             editor.clear();
             editor.commit();
         }
         if (idValue != null) {
             intent.putExtra("currentId", idValue);
-            intent.putExtra("currentName", idValue);
+            intent.putExtra("currentName", nameVal);
             startActivity(intent);
             finish();
         }
