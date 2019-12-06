@@ -621,6 +621,7 @@ color background_floating_material_dark
 color background_floating_material_light
 color background_material_dark
 color background_material_light
+color black
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
 color bright_foreground_inverse_material_dark
@@ -682,8 +683,10 @@ color fui_bgTwitter
 color fui_buttonShadow
 color fui_linkColor
 color fui_transparent
+color gray
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color ic_launcher_background
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -747,6 +750,8 @@ color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
 color tooltip_background_dark
 color tooltip_background_light
+color transparent
+color white
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
 dimen abc_action_bar_default_height_material
@@ -1108,6 +1113,7 @@ drawable fui_idp_button_background_phone
 drawable fui_idp_button_background_twitter
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable home
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_mtrl_chip_checked_black
@@ -1116,6 +1122,7 @@ drawable ic_mtrl_chip_close_circle
 drawable logo
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
+drawable mypage
 drawable navigation_empty_icon
 drawable notification_action_background
 drawable notification_bg
@@ -1130,8 +1137,13 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable picture
+drawable plus
+drawable search
+drawable selector
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+font font
+font silgothic
 id ALT
 id CTRL
 id FUNCTION
@@ -1188,7 +1200,6 @@ id button_sign_in
 id cancelButton
 id cancel_action
 id category
-id categorybtn
 id center
 id center_horizontal
 id center_vertical
@@ -1336,6 +1347,7 @@ id pin
 id pname
 id post
 id post_btn
+id postbtn
 id price
 id progress_circular
 id progress_horizontal
@@ -1503,9 +1515,10 @@ layout activity_main
 layout activity_personal_post
 layout activity_post
 layout activity_product_detail
-layout activity_sign_in
+layout activity_sign_up
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
+layout custom_action_bar
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -1570,6 +1583,7 @@ layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 plurals fui_error_weak_password
 string abc_action_bar_home_description
@@ -1759,6 +1773,7 @@ style Animation_AppCompat_DropDownUp
 style Animation_AppCompat_Tooltip
 style Animation_Design_BottomSheetDialog
 style AppTheme
+style AppThemeActionBarLogo
 style Base_AlertDialog_AppCompat
 style Base_AlertDialog_AppCompat_Light
 style Base_Animation_AppCompat_Dialog

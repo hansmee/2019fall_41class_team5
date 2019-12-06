@@ -34,7 +34,7 @@
         <activity android:name="com.example.arit.Post" />
         <activity android:name="com.example.arit.ARMode" />
         <activity android:name="com.example.arit.Home" />
-        <activity android:name="com.example.arit.SignIn" />
+        <activity android:name="com.example.arit.SignUp" />
         <activity android:name="com.example.arit.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

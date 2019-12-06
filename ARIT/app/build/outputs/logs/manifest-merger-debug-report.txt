@@ -206,7 +206,7 @@ activity#com.example.arit.Home
 ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:22:9-42
 	android:name
 		ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:22:19-39
-activity#com.example.arit.SignIn
+activity#com.example.arit.SignUp
 ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:23:9-44
 	android:name
 		ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:23:19-41

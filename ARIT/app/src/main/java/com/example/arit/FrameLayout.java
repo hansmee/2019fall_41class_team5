@@ -1,5 +1,6 @@
 package com.example.arit;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -7,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 
 public class FrameLayout extends AppCompatActivity implements View.OnClickListener{
@@ -16,7 +18,7 @@ public class FrameLayout extends AppCompatActivity implements View.OnClickListen
     private final int Frag3 = 3;
     private final int Frag4 = 4;
 
-    Button btn_tab1, btn_tab2, btn_tab3, btn_tab4;
+    ImageButton btn_tab1, btn_tab2, btn_tab3, btn_tab4;
 
     Intent intent;
     String currentId;
@@ -29,10 +31,15 @@ public class FrameLayout extends AppCompatActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_frame_layout);
 
-        btn_tab1 = (Button)findViewById(R.id.homebtn);
-        btn_tab2 = (Button)findViewById(R.id.categorybtn);
-        btn_tab3 = (Button)findViewById(R.id.searchbtn);
-        btn_tab4 = (Button)findViewById(R.id.mypagebtn);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        actionBar.setCustomView(R.layout.custom_action_bar);
+        actionBar.setElevation(0);
+
+        btn_tab1 = findViewById(R.id.homebtn);
+        btn_tab2 = findViewById(R.id.postbtn);
+        btn_tab3 = findViewById(R.id.searchbtn);
+        btn_tab4 = findViewById(R.id.mypagebtn);
 
         btn_tab1.setOnClickListener(this);
         btn_tab2.setOnClickListener(this);
@@ -57,7 +64,7 @@ public class FrameLayout extends AppCompatActivity implements View.OnClickListen
             case R.id.homebtn :
                 callFragment(Frag1);
                 break;
-            case R.id.categorybtn :
+            case R.id.postbtn :
                 callFragment(Frag2);
                 break;
             case R.id.searchbtn :
@@ -83,10 +90,10 @@ public class FrameLayout extends AppCompatActivity implements View.OnClickListen
 
             case 2 :
 
-                PostFrag categoryFrag = new PostFrag();
-                transaction.replace(R.id.fragmentContainer, categoryFrag);
+                PostFrag postFrag = new PostFrag();
+                transaction.replace(R.id.fragmentContainer, postFrag);
                 transaction.commit();
-                categoryFrag.setArguments(bundle);
+                postFrag.setArguments(bundle);
                 break;
 
             case 3 :

@@ -74,7 +74,7 @@
 36        <activity android:name="com.example.arit.Home" />
 36-->/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:22:9-42
 36-->/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:22:19-39
-37        <activity android:name="com.example.arit.SignIn" />
+37        <activity android:name="com.example.arit.SignUp" />
 37-->/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:23:9-44
 37-->/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:23:19-41
 38        <activity android:name="com.example.arit.MainActivity" >

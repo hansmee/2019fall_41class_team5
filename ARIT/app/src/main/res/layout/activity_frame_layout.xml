@@ -4,12 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".FrameLayout">
 
     <FrameLayout
         android:id="@+id/fragmentContainer"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@color/black"
+
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -21,7 +24,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:gravity="bottom"
         android:orientation="horizontal"
@@ -30,33 +33,46 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fragmentContainer">
 
-        <Button
+        <ImageButton
             android:id="@+id/homebtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Home" />
+            android:maxWidth="50dp"
+            android:padding="5dp"
+            android:src="@drawable/home"
+            android:background="@drawable/selector"
+            android:scaleType="fitCenter"/>
 
-        <Button
-            android:id="@+id/categorybtn"
+        <ImageButton
+            android:id="@+id/postbtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Post" />
+            android:padding="5dp"
+            android:src="@drawable/plus"
+            android:background="@drawable/selector"
+            android:scaleType="fitCenter" />
 
-        <Button
+        <ImageButton
             android:id="@+id/searchbtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Search" />
+            android:padding="5dp"
+            android:src="@drawable/search"
+            android:background="@drawable/selector"
+            android:scaleType="fitCenter" />
 
-        <Button
+        <ImageButton
             android:id="@+id/mypagebtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Mypage" />
+            android:padding="5dp"
+            android:src="@drawable/mypage"
+            android:background="@drawable/selector"
+            android:scaleType="fitCenter"/>
     </LinearLayout>
 
 

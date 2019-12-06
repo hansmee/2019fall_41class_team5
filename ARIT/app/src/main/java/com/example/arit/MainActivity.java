@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DataSnapshot;
@@ -46,6 +47,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        actionBar.setCustomView(R.layout.custom_action_bar);
+        actionBar.setElevation(0);
+        actionBar.hide();
+
+
         idEdit = (EditText) findViewById(R.id.idEdit);
         passEdit = (EditText) findViewById(R.id.passEdit);
         loginButton = (Button) findViewById(R.id.loginButton);
@@ -55,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         final Intent intent = new Intent(MainActivity.this, FrameLayout.class);
-        final Intent intent2 = new Intent(MainActivity.this, SignIn.class);
+        final Intent intent2 = new Intent(MainActivity.this, SignUp.class);
 
 
         ///////////////////////////////Check preference/////////////////////////////////////////////
@@ -155,6 +163,5 @@ public class MainActivity extends AppCompatActivity {
         };
         uDatabase.addValueEventListener(postListener);
     }
-
 
 }

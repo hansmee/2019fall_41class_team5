@@ -20,7 +20,7 @@
         <activity android:name=".Post" />
         <activity android:name=".ARMode" />
         <activity android:name=".Home" />
-        <activity android:name=".SignIn" />
+        <activity android:name=".SignUp" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

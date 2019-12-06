@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="150dp"
-    android:background="@android:color/white"
+    android:background="@android:color/black"
     android:padding="15dp">
 
     <LinearLayout
@@ -16,7 +16,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="17dp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:fontFamily="@font/silgothic"
+            android:textColor="@color/white"/>
 
         <TextView
             android:id="@+id/title"
@@ -26,7 +28,9 @@
             android:textSize="17dp"
             android:maxLines="1"
             android:ellipsize="end"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:fontFamily="@font/silgothic"/>
 
     </LinearLayout>
 
@@ -55,9 +59,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="1dp"
-                android:textSize="15dp"
+                android:textSize="19dp"
+                android:textStyle="bold"
                 android:maxLines="1"
-                android:ellipsize="end"/>
+                android:ellipsize="end"
+                android:textColor="@color/white"
+                android:fontFamily="@font/silgothic"/>
 
             <TextView
                 android:id="@+id/price"
@@ -65,7 +72,8 @@
                 android:layout_height="wrap_content"
                 android:padding="1dp"
                 android:textSize="15dp"
-                android:textColor="#0B4C5F"/>
+                android:textColor="@color/white"
+                android:fontFamily="@font/silgothic"/>
 
 
             <TextView
@@ -74,7 +82,8 @@
                 android:layout_height="wrap_content"
                 android:padding="1dp"
                 android:textSize="15dp"
-                android:textColor="#0B4C5F"/>
+                android:textColor="@color/white"
+                android:fontFamily="@font/silgothic"/>
 
 
         </LinearLayout>

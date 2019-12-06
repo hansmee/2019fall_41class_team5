@@ -1,6 +1,7 @@
 package com.example.arit;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -15,7 +16,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
@@ -23,7 +23,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class SignIn extends AppCompatActivity {
+public class SignUp extends AppCompatActivity {
 
     EditText idEdit;
     EditText passEdit;
@@ -39,7 +39,12 @@ public class SignIn extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_in);
+        setContentView(R.layout.activity_sign_up);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        actionBar.setCustomView(R.layout.custom_action_bar);
+        actionBar.setElevation(0);
 
         idEdit = findViewById(R.id.idEdit2);
         passEdit = findViewById(R.id.passEdit2);
@@ -51,8 +56,8 @@ public class SignIn extends AppCompatActivity {
 
 
 
-        final Intent intent = new Intent(SignIn.this, MainActivity.class);
-        final Intent intent2 = new Intent(SignIn.this, FrameLayout.class);
+        final Intent intent = new Intent(SignUp.this, MainActivity.class);
+        final Intent intent2 = new Intent(SignUp.this, FrameLayout.class);
 
 
         cancelButton.setOnClickListener(new View.OnClickListener() {
@@ -79,14 +84,14 @@ public class SignIn extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                 if (dataSnapshot.hasChild(testID) && testID.length() >= 2) {
-                    Toast.makeText(SignIn.this, "ID already exits", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignUp.this, "ID already exits", Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
                     int check = checkSignup(testID, PW, NAME, PHONE);
 
                     if(check == 5){
-                        Toast.makeText(SignIn.this, "Congratulations you have signed up to ARIT", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SignUp.this, "Congratulations you have signed up to ARIT", Toast.LENGTH_SHORT).show();
                         postUserInfo(idEdit.getText().toString(), passEdit.getText().toString(), nameEdit.getText().toString(), phoneEdit.getText().toString());
                         flag = 1;
                         intent2.putExtra("currentId", idEdit.getText().toString());
@@ -95,10 +100,10 @@ public class SignIn extends AppCompatActivity {
                         return;
                     }
                     else{
-                        if(check == 0){  Toast.makeText(SignIn.this, "ID must be at least 2 characters long", Toast.LENGTH_SHORT).show();    }
-                        if(check == 1){  Toast.makeText(SignIn.this, "PW must be at least 8 characters and contain Capital, Lowercase, Number and Special Character", Toast.LENGTH_SHORT).show();    }
-                        if(check == 2){  Toast.makeText(SignIn.this, "Please check Name and enter again", Toast.LENGTH_SHORT).show();    }
-                        if(check == 3){  Toast.makeText(SignIn.this, "Enter a valid phone number", Toast.LENGTH_SHORT).show();    }
+                        if(check == 0){  Toast.makeText(SignUp.this, "ID must be at least 2 characters long", Toast.LENGTH_SHORT).show();    }
+                        if(check == 1){  Toast.makeText(SignUp.this, "PW must be at least 8 characters and contain Capital, Lowercase, Number and Special Character", Toast.LENGTH_SHORT).show();    }
+                        if(check == 2){  Toast.makeText(SignUp.this, "Please check Name and enter again", Toast.LENGTH_SHORT).show();    }
+                        if(check == 3){  Toast.makeText(SignUp.this, "Enter a valid phone number", Toast.LENGTH_SHORT).show();    }
                     }
 
                 }
