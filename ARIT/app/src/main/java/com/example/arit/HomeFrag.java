@@ -28,11 +28,13 @@ import java.util.Collections;
 
 
 public class HomeFrag extends Fragment {
-    public HomeFrag() {
-        // Required empty public constructor
+
+    public static HomeFrag newInstance() {
+        return new HomeFrag();
     }
 
-
+    String currentId;
+    String currentName;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -41,8 +43,7 @@ public class HomeFrag extends Fragment {
         final View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         Bundle extra = this.getArguments();
-        String currentId;
-        String currentName;
+
 
         if(extra != null){
             currentId = extra.getString("currentId");
@@ -73,18 +74,22 @@ public class HomeFrag extends Fragment {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
                         // 해당 글 클릭하면 상세 정보 화면으로 넘어가도록 (ProductDetail.java)
-                        /*intent = new Intent(getActivity().getApplicationContext(), ProductDetail.class);
-                        intent.putExtra("currentID", currentId);
-                        intent.putExtra("currentName", currentName);
-                        intent.putExtra("title", products.get(i).getTitle());
-                        intent.putExtra("pname", products.get(i).getPname());
-                        intent.putExtra("uname", products.get(i).getUname());
-                        intent.putExtra("price", products.get(i).getPrice());
-                        intent.putExtra("how", products.get(i).getHow());
-                        intent.putExtra("contact", products.get(i).getContact());
-                        intent.putExtra("detail",products.get(i).getDetail());
-                        intent.putExtra("imagename", products.get(i).getImagename());
-                        startActivity(intent);*/
+                        Bundle productInfo = new Bundle();
+
+                        productInfo.putString("currentID", currentId);
+                        productInfo.putString("currentName", currentName);
+                        productInfo.putString("title", products.get(i).getTitle());
+                        productInfo.putString("pname", products.get(i).getPname());
+                        productInfo.putString("uname", products.get(i).getUname());
+                        productInfo.putString("price", products.get(i).getPrice());
+                        productInfo.putString("how", products.get(i).getHow());
+                        productInfo.putString("contact", products.get(i).getContact());
+                        productInfo.putString("detail",products.get(i).getDetail());
+                        productInfo.putString("imagename", products.get(i).getImagename());
+
+
+                        ((FrameLayout)getActivity()).changeFragment(ProductFrag.newInstance(), productInfo);
+
                     }
                 });
             }
