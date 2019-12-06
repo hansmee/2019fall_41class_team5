@@ -93,18 +93,6 @@ public class HomeFrag extends Fragment {
             }
         });
 
-        // POST 버튼
-        Button post_btn = view.findViewById(R.id.post);
-        post_btn.setOnClickListener(new Button.OnClickListener(){
-            public void onClick(View v){
-                /*intent2 = new Intent(getActivity(), Post.class);
-                intent2.putExtra("currentId", currentId);
-                intent2.putExtra("currentName", currentName);
-                startActivity(intent2);*/
-            }
-        });
-
-
         return view;
     }
 

@@ -83,7 +83,7 @@ public class FrameLayout extends AppCompatActivity implements View.OnClickListen
 
             case 2 :
 
-                CategoryFrag categoryFrag = new CategoryFrag();
+                PostFrag categoryFrag = new PostFrag();
                 transaction.replace(R.id.fragmentContainer, categoryFrag);
                 transaction.commit();
                 categoryFrag.setArguments(bundle);

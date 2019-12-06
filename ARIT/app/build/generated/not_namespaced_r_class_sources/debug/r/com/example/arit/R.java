@@ -5831,9 +5831,9 @@ public final class R {
     public static final int design_navigation_menu=0x7f0c0032;
     public static final int design_navigation_menu_item=0x7f0c0033;
     public static final int design_text_input_password_icon=0x7f0c0034;
-    public static final int fragment_category=0x7f0c0035;
-    public static final int fragment_home=0x7f0c0036;
-    public static final int fragment_mypage=0x7f0c0037;
+    public static final int fragment_home=0x7f0c0035;
+    public static final int fragment_mypage=0x7f0c0036;
+    public static final int fragment_post=0x7f0c0037;
     public static final int fragment_search=0x7f0c0038;
     public static final int fui_activity_invisible=0x7f0c0039;
     public static final int fui_activity_register_email=0x7f0c003a;
