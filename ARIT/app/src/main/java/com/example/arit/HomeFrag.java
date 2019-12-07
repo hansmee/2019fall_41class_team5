@@ -142,7 +142,7 @@ public class HomeFrag extends Fragment {
 
     public void getFirebaseDatabase(View view, String _category) {
         mPostReference = FirebaseDatabase.getInstance().getReference().child("product");
-        mPostReference.limitToLast(20).addListenerForSingleValueEvent(new ValueEventListener() {
+        mPostReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
