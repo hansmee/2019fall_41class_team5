@@ -141,66 +141,60 @@
 
         </ScrollView>
 
-        <ScrollView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="4">
+            android:layout_weight="4"
+            android:orientation="vertical"
+            android:padding="15dp">
 
             <LinearLayout
+                android:id="@+id/linearLayout5"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="15dp">
+                android:layout_height="25dp"
+                android:orientation="horizontal">
 
-                <LinearLayout
-                    android:id="@+id/linearLayout5"
-                    android:layout_width="match_parent"
-                    android:layout_height="25dp"
-                    android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/commentEdit"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="8"
+                    android:layout_marginEnd="10dp"
+                    android:paddingStart="10dp"
+                    android:hint="Enter a comment"
+                    android:textColorHint="@color/black"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/white"
+                    android:background="@drawable/round_edit_text"/>
 
-                    <EditText
-                        android:id="@+id/commentEdit"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="8"
-                        android:layout_marginEnd="10dp"
-                        android:paddingStart="10dp"
-                        android:hint="Enter a comment"
-                        android:textColorHint="@color/black"
-                        android:inputType="textPersonName"
-                        android:textColor="@color/white"
-                        android:background="@drawable/round_edit_text"/>
-
-                    <Button
-                        android:id="@+id/commentButton"
-                        android:layout_width="80dp"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/round_edit_text"
-                        android:textColor="@color/white"
-                        android:textSize="19dp"
-                        android:text="Post" />
-                </LinearLayout>
-
-                <ListView
-                    android:id="@+id/commentList"
-                    android:layout_width="match_parent"
-                    android:layout_height="140dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:layout_weight="10"
-                    android:background="@color/transparent"
-                    android:focusable="true"
-                    android:gravity="top"
-                    android:fadeScrollbars="false"
-                    android:scrollbarFadeDuration="0"
-                    android:scrollbarAlwaysDrawVerticalTrack="true"
-                    android:scrollbarThumbVertical="@color/white"
-                    android:scrollbarTrackVertical="@color/black"
-                    android:scrollbarSize="2dp" />
-
+                <Button
+                    android:id="@+id/commentButton"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/round_edit_text"
+                    android:textColor="@color/white"
+                    android:textSize="19dp"
+                    android:text="Post" />
             </LinearLayout>
 
-        </ScrollView>
+            <ListView
+                android:id="@+id/commentList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/transparent"
+                android:focusable="true"
+                android:gravity="top"
+                android:fadeScrollbars="false"
+                android:scrollbarFadeDuration="0"
+                android:scrollbarAlwaysDrawVerticalTrack="true"
+                android:scrollbarThumbVertical="@color/white"
+                android:scrollbarTrackVertical="@color/black"
+                android:scrollbarSize="2dp" />
+
+        </LinearLayout>
+
+
 
     </LinearLayout>
 

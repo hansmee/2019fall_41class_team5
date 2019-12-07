@@ -109,6 +109,7 @@ public class PostFrag extends Fragment {
                 title = titleET.getText().toString();
                 pname = pnameET.getText().toString();
                 price = priceET.getText().toString();
+                uname = currentName;
                 contact = contactET.getText().toString();
                 detail = detailET.getText().toString();
                 how = howSP.getSelectedItem().toString();
