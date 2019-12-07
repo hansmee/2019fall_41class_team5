@@ -25,7 +25,7 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="249dp"
+            android:layout_height="wrap_content"
             android:background="#FDEEC7"
             android:padding="3dp">
 
@@ -93,6 +93,14 @@
                     android:textSize="17dp" />
 
                 <TextView
+                    android:id="@+id/size"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#808080"
+                    android:textSize="17dp"/>
+
+                <TextView
                     android:id="@+id/detail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -118,16 +126,6 @@
 
         </ScrollView>
 
-        <ListView
-            android:id="@+id/commentList"
-            android:layout_width="match_parent"
-            android:layout_height="180dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:layout_weight="10"
-            android:background="@android:color/white"
-            android:focusable="true" />
-
         <LinearLayout
             android:id="@+id/linearLayout5"
             android:layout_width="match_parent"
@@ -136,7 +134,7 @@
 
             <EditText
                 android:id="@+id/commentEdit"
-                android:layout_width="314dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Enter a comment"
@@ -144,7 +142,7 @@
 
             <Button
                 android:id="@+id/commentButton"
-                android:layout_width="69dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Post" />
         </LinearLayout>

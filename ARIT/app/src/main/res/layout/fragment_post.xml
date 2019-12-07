@@ -15,7 +15,6 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_gravity="center"
-            android:padding="15dp"
             android:background="@color/black"
             android:layout_weight="7">
 
@@ -24,8 +23,8 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="15dp"
-                android:background="@color/black">
+                android:padding="25dp"
+                android:background="@android:color/black">
 
                 <LinearLayout
                     android:orientation="horizontal"
@@ -170,6 +169,78 @@
 
                 </LinearLayout>
 
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/Length"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:fontFamily="@font/silgothic"
+                        android:text="길이:"
+                        android:textColor="@color/white"
+                        android:textSize="13dp" />
+
+                    <EditText
+                        android:id="@+id/LengthET"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7"
+                        android:fontFamily="@font/silgothic"
+                        android:textColor="@color/white"
+                        android:textSize="17dp" />
+
+                    <TextView
+                        android:id="@+id/Height"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:fontFamily="@font/silgothic"
+                        android:text="높이: "
+                        android:textColor="@color/white"
+                        android:textSize="13dp" />
+
+                    <EditText
+                        android:id="@+id/HeightET"
+                        android:layout_weight="7"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="17dp"
+                        android:fontFamily="@font/silgothic"
+                        android:textColor="@color/white"/>
+
+                    <TextView
+                        android:id="@+id/Width"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:fontFamily="@font/silgothic"
+                        android:text="너비: "
+                        android:textColor="@color/white"
+                        android:textSize="13dp" />
+
+                    <EditText
+                        android:id="@+id/WidthET"
+                        android:layout_weight="7"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="17dp"
+                        android:fontFamily="@font/silgothic"
+                        android:textColor="@color/white"/>
+
+                    <Button
+                        android:id="@+id/Measure"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:text="Measure" />
+
+                </LinearLayout>
+
                 <EditText
                     android:id="@+id/detail"
                     android:layout_width="match_parent"
@@ -178,40 +249,39 @@
                     android:maxHeight="100dp"
                     android:layout_marginTop="5dp"
                     android:padding="7dp"
-                    android:background="@color/transparent"
                     android:hint="상세 정보 입력"
                     android:textSize="17dp"
-                    android:textColorHint="@color/white"
+                    android:textColorHint="@color/gray"
                     android:fontFamily="@font/silgothic"
                     android:textColor="@color/white"
                     android:inputType="textMultiLine"/>
 
                 <LinearLayout
                     android:orientation="horizontal"
-                    android:layout_width="match_parent"
+                    android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp">
 
                     <Spinner
                         android:id="@+id/howto"
-                        android:layout_width="0dp"
+                        android:layout_width="140dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:padding="5dp"
                         android:entries="@array/howto"
                         android:textAlignment="center"
-                        android:background="@color/transparent"/>
+                        android:fontFamily="@font/silgothic"
+                        android:textColor="@color/white"/>
 
                     <Spinner
                         android:id="@+id/category"
-                        android:layout_width="0dp"
+                        android:layout_width="145dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginLeft="10dp"
                         android:padding="5dp"
                         android:entries="@array/category"
                         android:textAlignment="center"
-                        android:background="@color/transparent"/>
+                        android:fontFamily="@font/silgothic"
+                        android:textColor="@color/white"/>
 
                 </LinearLayout>
 
