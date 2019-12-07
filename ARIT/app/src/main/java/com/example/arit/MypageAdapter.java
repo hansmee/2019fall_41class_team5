@@ -37,6 +37,10 @@ public class MypageAdapter extends BaseAdapter {
     LayoutInflater layoutInflater;
     private ArrayList<ProductItem> items;
     private OnItemClick mCallback;
+    DatabaseReference mPostReference;
+    int commentCount = 0;
+    TextView Comments;
+    int flag = 0;
 
     public MypageAdapter (Context context, ArrayList<ProductItem> items, OnItemClick listener) {
         this.layoutInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -77,6 +81,7 @@ public class MypageAdapter extends BaseAdapter {
             productViewHolder.tv3 = (TextView)view.findViewById(R.id.pname);
             productViewHolder.tv4 = (TextView)view.findViewById(R.id.price);
             productViewHolder.tv5 = (TextView)view.findViewById(R.id.howto);
+            productViewHolder.tv6 = (TextView)view.findViewById(R.id.commentCount);
             productViewHolder.btn = (Button)view.findViewById(R.id.delete);
 
             view.setTag(productViewHolder);
@@ -84,6 +89,11 @@ public class MypageAdapter extends BaseAdapter {
         else{
             productViewHolder = (MypageViewHolder) view.getTag();
         }
+
+        commentCount = 0;
+        mPostReference = FirebaseDatabase.getInstance().getReference().child("Comment").child(item.getImagename().split("\\.")[0]);
+        Log.e("no", mPostReference.toString());
+        getCommentCount(productViewHolder.tv6);
 
         productViewHolder.tv1.setText("["+item.getCategory()+"]");
         productViewHolder.tv2.setText(item.getTitle());
@@ -140,5 +150,35 @@ public class MypageAdapter extends BaseAdapter {
         });
 
         return view;
+    }
+
+    public void getCommentCount(TextView tv6) {
+
+        mPostReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                flag = 0;
+                commentCount = 0;
+
+
+                for(int i=0; i < dataSnapshot.toString().length(); i++)
+                {    if(dataSnapshot.toString().charAt(i) == '{')
+                    commentCount++;
+                }
+
+                commentCount -= 2;
+                if(commentCount < 0){ commentCount = 0; }
+                Log.e("yes", dataSnapshot.toString());
+                String setString = Integer.toString(commentCount);
+                Log.e("yes", setString);
+                tv6.setText(setString);
+                flag = 1;
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) { }
+        });
+
     }
 }

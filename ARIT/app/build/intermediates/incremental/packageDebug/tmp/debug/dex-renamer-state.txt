@@ -1,4 +1,4 @@
-#Sun Dec 08 04:30:08 KST 2019
+#Sun Dec 08 04:41:39 KST 2019
 base.0=/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/build/intermediates/dex/debug/mergeExtDexDebug/out/classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex
