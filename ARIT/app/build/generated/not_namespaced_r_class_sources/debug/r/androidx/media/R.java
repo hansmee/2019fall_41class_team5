@@ -103,21 +103,21 @@ public final class R {
         public static final int italic = 0x7f0a009a;
         public static final int line1 = 0x7f0a00a0;
         public static final int line3 = 0x7f0a00a1;
-        public static final int media_actions = 0x7f0a00ae;
-        public static final int normal = 0x7f0a00be;
-        public static final int notification_background = 0x7f0a00bf;
-        public static final int notification_main_column = 0x7f0a00c0;
-        public static final int notification_main_column_container = 0x7f0a00c1;
-        public static final int right_icon = 0x7f0a00e4;
-        public static final int right_side = 0x7f0a00e5;
-        public static final int status_bar_latest_event_content = 0x7f0a0118;
-        public static final int tag_transition_group = 0x7f0a011d;
-        public static final int tag_unhandled_key_event_manager = 0x7f0a011e;
-        public static final int tag_unhandled_key_listeners = 0x7f0a011f;
-        public static final int text = 0x7f0a0120;
-        public static final int text2 = 0x7f0a0121;
-        public static final int time = 0x7f0a012e;
-        public static final int title = 0x7f0a012f;
+        public static final int media_actions = 0x7f0a00af;
+        public static final int normal = 0x7f0a00bf;
+        public static final int notification_background = 0x7f0a00c0;
+        public static final int notification_main_column = 0x7f0a00c1;
+        public static final int notification_main_column_container = 0x7f0a00c2;
+        public static final int right_icon = 0x7f0a00e6;
+        public static final int right_side = 0x7f0a00e7;
+        public static final int status_bar_latest_event_content = 0x7f0a011c;
+        public static final int tag_transition_group = 0x7f0a0121;
+        public static final int tag_unhandled_key_event_manager = 0x7f0a0122;
+        public static final int tag_unhandled_key_listeners = 0x7f0a0123;
+        public static final int text = 0x7f0a0124;
+        public static final int text2 = 0x7f0a0125;
+        public static final int time = 0x7f0a0132;
+        public static final int title = 0x7f0a0133;
     }
     public static final class integer {
         private integer() {}

@@ -1140,6 +1140,7 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable picture
 drawable plus
+drawable round_edit_text
 drawable sceneform_hand_phone
 drawable sceneform_plane
 drawable search
@@ -1311,6 +1312,7 @@ id light
 id line1
 id line3
 id linear
+id linearLayout
 id linearLayout2
 id linearLayout4
 id linearLayout5
@@ -1366,6 +1368,7 @@ id post
 id post_btn
 id postbtn
 id price
+id product_list
 id progress_circular
 id progress_horizontal
 id pwlinear
@@ -1391,8 +1394,10 @@ id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
 id scrollable
+id search
 id search_badge
 id search_bar
+id search_btn
 id search_button
 id search_close_btn
 id search_edit_frame

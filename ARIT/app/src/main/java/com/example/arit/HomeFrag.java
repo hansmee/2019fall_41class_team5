@@ -179,6 +179,7 @@ public class HomeFrag extends Fragment {
                         productInfo.putString("contact", products.get(i).getContact());
                         productInfo.putString("detail",products.get(i).getDetail());
                         productInfo.putString("imagename", products.get(i).getImagename());
+                        productInfo.putString("category", products.get(i).getCategory());
 
 
                         ((FrameLayout)getActivity()).changeFragment(ProductFrag.newInstance(), productInfo);

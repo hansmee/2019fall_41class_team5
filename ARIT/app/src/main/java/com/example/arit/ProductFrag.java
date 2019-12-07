@@ -112,13 +112,13 @@ public class ProductFrag extends Fragment {
 
         // intent로부터 받은 정보 텍스트뷰에 넣기
         titleTV.setText(title);
-        unameTV.setText(uname);
+        unameTV.setText("작성자: " + uname);
         pnameTV.setText(pname);
-        priceTV.setText(price);
-        howTV.setText(how);
-        categoryTV.setText(category);
-        contactTV.setText(contact);
-        detailTV.setText(detail);
+        priceTV.setText(price + "원");
+        howTV.setText("거래 방법: " + how);
+        categoryTV.setText("카테고리: " + category);
+        contactTV.setText("연락처: " + contact);
+        detailTV.setText("상세 정보: " + detail);
 
         // Instance of product comment section
         commentDatabase = FirebaseDatabase.getInstance().getReference("Comment"+"/"+pname);

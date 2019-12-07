@@ -8,6 +8,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,6 +35,12 @@ public class SearchFrag extends Fragment {
     String currentId;
     String currentName;
 
+    String keyword = "";
+
+    DatabaseReference mPostReference;
+    ArrayList<ProductItem> products;
+    ProductAdapter productAdapter;
+    ListView recent;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -49,51 +56,11 @@ public class SearchFrag extends Fragment {
 
         }
 
-        ListView product_list = view.findViewById(R.id.product_list);
-        final ArrayList<ProductItem> products = new ArrayList<>();
-        //
-
-        DatabaseReference mPostReference;
+        recent = view.findViewById(R.id.product_list);
+        products = new ArrayList<>();
 
         Bundle bundle;
-        ///////////////////// 시작 시 최신 글 띄우기 /////////////////////
-        mPostReference = FirebaseDatabase.getInstance().getReference().child("product");
-        mPostReference.limitToLast(20).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                for(DataSnapshot item : dataSnapshot.getChildren()){
-                    products.add(0,item.getValue(ProductItem.class));
-                }
-                ProductAdapter productAdapter = new ProductAdapter(view.getContext(), products);
-                product_list.setAdapter(productAdapter);
-                product_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
-                        // 해당 글 클릭하면 상세 정보 화면으로 넘어가도록 (ProductFrag.java)
-                        Bundle productInfo = new Bundle();
-
-                        productInfo.putString("currentID", currentId);
-                        productInfo.putString("currentName", currentName);
-                        productInfo.putString("title", products.get(i).getTitle());
-                        productInfo.putString("pname", products.get(i).getPname());
-                        productInfo.putString("uname", products.get(i).getUname());
-                        productInfo.putString("price", products.get(i).getPrice());
-                        productInfo.putString("how", products.get(i).getHow());
-                        productInfo.putString("contact", products.get(i).getContact());
-                        productInfo.putString("detail",products.get(i).getDetail());
-                        productInfo.putString("imagename", products.get(i).getImagename());
-
-
-                        ((FrameLayout)getActivity()).changeFragment(ProductFrag.newInstance(), productInfo);
-
-                    }
-                });
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-            }
-        });
+        getFirebaseDatabase(view, keyword);
 
         ///////////////////// 시작 시 최신 글 띄우기 /////////////////////
 
@@ -109,48 +76,9 @@ public class SearchFrag extends Fragment {
                 ListView product_list = view.findViewById(R.id.product_list);
                 final ArrayList<ProductItem> products = new ArrayList<>();
 
-                String keyword = searchET.getText().toString();
+                keyword = searchET.getText().toString();
+                getFirebaseDatabase(view, keyword);
 
-                DatabaseReference mPostReference2;
-
-                mPostReference2 = FirebaseDatabase.getInstance().getReference().child("product");
-                mPostReference2.limitToLast(20).startAt(keyword).addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                        for(DataSnapshot item : dataSnapshot.getChildren()){
-                            products.add(0, item.getValue(ProductItem.class));
-                        }
-                        ProductAdapter productAdapter = new ProductAdapter(view.getContext(), products);
-                        product_list.setAdapter(productAdapter);
-                        product_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                            @Override
-                            public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
-
-                                Bundle productInfo = new Bundle();
-
-                                productInfo.putString("currentID", currentId);
-                                productInfo.putString("currentName", currentName);
-                                productInfo.putString("title", products.get(i).getTitle());
-                                productInfo.putString("pname", products.get(i).getPname());
-                                productInfo.putString("uname", products.get(i).getUname());
-                                productInfo.putString("price", products.get(i).getPrice());
-                                productInfo.putString("how", products.get(i).getHow());
-                                productInfo.putString("contact", products.get(i).getContact());
-                                productInfo.putString("detail",products.get(i).getDetail());
-                                productInfo.putString("imagename", products.get(i).getImagename());
-
-
-                                ((FrameLayout)getActivity()).changeFragment(ProductFrag.newInstance(), productInfo);
-                            }
-                        });
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
 
 
             }
@@ -158,5 +86,60 @@ public class SearchFrag extends Fragment {
 
 
         return view;
+    }
+
+    public void getFirebaseDatabase(View view, String _keyword) {
+        mPostReference = FirebaseDatabase.getInstance().getReference().child("product");
+        mPostReference.limitToLast(20).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                products.clear();
+
+                for(DataSnapshot item : dataSnapshot.getChildren()){
+
+                    ProductItem tmp = item.getValue(ProductItem.class);
+                    String title = tmp.getTitle();
+                    Log.d("products: ", tmp.getCategory());
+                    if(_keyword.equals("")) products.add(0,tmp);
+                    else {
+                        if (title.contains(_keyword)) {
+                            products.add(0, item.getValue(ProductItem.class));
+                        }
+                    }
+                }
+
+
+                productAdapter = new ProductAdapter(view.getContext(), products);
+                recent.setAdapter(productAdapter);
+                recent.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
+                        // 해당 글 클릭하면 상세 정보 화면으로 넘어가도록 (ProductDetail.java)
+                        Bundle productInfo = new Bundle();
+
+                        productInfo.putString("currentID", currentId);
+                        productInfo.putString("currentName", currentName);
+                        productInfo.putString("title", products.get(i).getTitle());
+                        productInfo.putString("pname", products.get(i).getPname());
+                        productInfo.putString("uname", products.get(i).getUname());
+                        productInfo.putString("price", products.get(i).getPrice());
+                        productInfo.putString("how", products.get(i).getHow());
+                        productInfo.putString("contact", products.get(i).getContact());
+                        productInfo.putString("detail",products.get(i).getDetail());
+                        productInfo.putString("imagename", products.get(i).getImagename());
+                        productInfo.putString("category", products.get(i).getCategory());
+
+
+                        ((FrameLayout)getActivity()).changeFragment(ProductFrag.newInstance(), productInfo);
+
+                    }
+                });
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+            }
+        });
     }
 }

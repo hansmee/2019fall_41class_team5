@@ -46,8 +46,10 @@
                         android:id="@+id/title"
                         android:layout_weight="7"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="30dp"
+                        android:paddingStart="10dp"
                         android:textSize="17dp"
+                        android:background="@drawable/round_edit_text"
                         android:fontFamily="@font/silgothic"
                         android:textColor="@color/white"/>
 
@@ -62,6 +64,7 @@
                     <ImageView
                         android:id="@+id/image"
                         android:src="@drawable/picture"
+                        android:background="@color/transparent"
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
                         android:maxWidth="300dp"
@@ -75,10 +78,10 @@
                         android:layout_marginTop="10dp"
                         android:padding="5dp"
                         android:text="사진 첨부"
-                        android:textSize="17dp"
-                        android:background="@color/transparent"
+                        android:textSize="15dp"
+                        android:background="@color/white"
                         android:fontFamily="@font/silgothic"
-                        android:textColor="@color/white"/>
+                        android:textColor="@color/black"/>
 
                 </LinearLayout>
 
@@ -101,8 +104,10 @@
                         android:id="@+id/pname"
                         android:layout_weight="7"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="30dp"
+                        android:paddingStart="10dp"
                         android:textSize="17dp"
+                        android:background="@drawable/round_edit_text"
                         android:fontFamily="@font/silgothic"
                         android:textColor="@color/white"/>
 
@@ -127,9 +132,11 @@
                         android:id="@+id/price"
                         android:layout_weight="6"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="30dp"
+                        android:paddingStart="10dp"
                         android:inputType="number"
                         android:textSize="17dp"
+                        android:background="@drawable/round_edit_text"
                         android:fontFamily="@font/silgothic"
                         android:textColor="@color/white"/>
 
@@ -138,6 +145,7 @@
                         android:textSize="17dp"
                         android:layout_weight="1"
                         android:layout_width="0dp"
+                        android:textAlignment="textEnd"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/silgothic"
                         android:textColor="@color/white"/>
@@ -163,8 +171,10 @@
                         android:id="@+id/contact"
                         android:layout_weight="7"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="30dp"
+                        android:paddingStart="10dp"
                         android:textSize="17dp"
+                        android:background="@drawable/round_edit_text"
                         android:fontFamily="@font/silgothic"
                         android:textColor="@color/white"/>
 
@@ -176,7 +186,8 @@
                     android:layout_height="100dp"
                     android:maxWidth="300dp"
                     android:maxHeight="100dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="top"
                     android:padding="7dp"
                     android:background="@color/transparent"
                     android:hint="상세 정보 입력"
@@ -200,7 +211,7 @@
                         android:padding="5dp"
                         android:entries="@array/howto"
                         android:textAlignment="center"
-                        android:background="@color/transparent"/>
+                        android:background="@color/white"/>
 
                     <Spinner
                         android:id="@+id/category"
@@ -211,7 +222,7 @@
                         android:padding="5dp"
                         android:entries="@array/category"
                         android:textAlignment="center"
-                        android:background="@color/transparent"/>
+                        android:background="@color/white"/>
 
                 </LinearLayout>
 
