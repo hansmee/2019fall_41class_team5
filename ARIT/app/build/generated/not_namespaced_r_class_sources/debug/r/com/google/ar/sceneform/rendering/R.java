@@ -17,9 +17,9 @@ public final class R {
     public static final class id {
         private id() {}
 
-        public static final int __arcore_cancelButton = 0x7f0a000e;
-        public static final int __arcore_continueButton = 0x7f0a000f;
-        public static final int __arcore_messageText = 0x7f0a0010;
+        public static final int __arcore_cancelButton = 0x7f0a000f;
+        public static final int __arcore_continueButton = 0x7f0a0010;
+        public static final int __arcore_messageText = 0x7f0a0011;
     }
     public static final class layout {
         private layout() {}

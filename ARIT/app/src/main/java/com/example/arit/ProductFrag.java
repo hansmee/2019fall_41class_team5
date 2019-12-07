@@ -53,7 +53,7 @@ public class ProductFrag extends Fragment {
     String category;    // 카테고리
     String imagename;
     String currID;      //사용자
-    Double plength, pheight, pwidth;
+    double plength, pheight, pwidth;
 
     
     TextView titleTV;       // 제목
@@ -113,9 +113,9 @@ public class ProductFrag extends Fragment {
             detail = bundle.getString("detail");
             imagename = bundle.getString("imagename");
             currID = bundle.getString("currentID");
-            plength = bundle.getDouble("length");
-            pheight = bundle.getDouble("height");
-            pwidth = bundle.getDouble("width");            
+            plength = Double.parseDouble(bundle.getString("length"));
+            pheight = Double.parseDouble(bundle.getString("height"));
+            pwidth = Double.parseDouble(bundle.getString("width"));
         }
 
         String SizeInfo = "길이: " + plength + "높이: " + pheight + "길이: " + pwidth;
@@ -200,6 +200,9 @@ public class ProductFrag extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), ARMode.class);
+                intent.putExtra("length", plength);
+                intent.putExtra("height", pheight);
+                intent.putExtra("width", pwidth);
                 startActivity(intent);
             }
         });
