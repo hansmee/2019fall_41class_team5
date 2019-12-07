@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -31,9 +32,12 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 
@@ -79,6 +83,8 @@ public class ProductFrag extends Fragment {
 
     Button arMode;     //Comment Post button
 
+    ImageButton wish;    // 위시리스트 추가하기
+
     Intent intent;
 
     ArrayList<String> comments;
@@ -88,16 +94,19 @@ public class ProductFrag extends Fragment {
 
     private MyAdapter myAdapter;
     private DatabaseReference commentDatabase;
+    private DatabaseReference wishDatabase;
+
+    View view;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        final View view = inflater.inflate(R.layout.fragment_product, container, false);
+        view = inflater.inflate(R.layout.fragment_product, container, false);
         Bundle bundle = getArguments();
 
         if (bundle != null){
-            currentId = bundle.getString("currentId");
+            currentId = bundle.getString("currentID");
             currentName = bundle.getString("currentName");
             title = bundle.getString("title");
             uname = bundle.getString("uname");
@@ -132,6 +141,7 @@ public class ProductFrag extends Fragment {
         coms = view.findViewById(R.id.commentList);
         arMode = view.findViewById(R.id.arMode);
         SizeTV = view.findViewById(R.id.size);
+        wish = view.findViewById(R.id.wishbtn);
 
         // intent로부터 받은 정보 텍스트뷰에 넣기
         titleTV.setText(title);
@@ -147,6 +157,9 @@ public class ProductFrag extends Fragment {
 
         // Instance of product comment section
         commentDatabase = FirebaseDatabase.getInstance().getReference("Comment"+"/"+pname);
+
+        // wishlist database
+        wishDatabase = FirebaseDatabase.getInstance().getReference("wish/");
 
         // 파이어베이스 스토리지로부터 해당 이미지 파일 가져오기
         final FirebaseStorage storage = FirebaseStorage.getInstance();
@@ -194,6 +207,17 @@ public class ProductFrag extends Fragment {
                 startActivity(intent);
             }
         });
+
+
+        // 위시리스트에 추가하기
+        wish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("currentId: ", currentId + " id");
+                addWishItem(currentId, imagename);
+            }
+        });
+
         return view;
     }
 
@@ -286,4 +310,89 @@ public class ProductFrag extends Fragment {
         });
     }
     //////////////////////Post new user info to Firebase////////////////////////////////////////////
+
+    // 위시리스트 추가
+    public void addWishItem(String userId, String imagename){
+        //wishDatabase = wishDatabase.child(userID);
+
+        Log.d("currentId: ", currentId + " id");
+        Log.d("userId: ", userId + " id");
+
+        String key = imagename.substring(0, 21);
+        Log.d("key: ", key);
+
+        wishDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                Log.d("datasnapshot: ", dataSnapshot.toString());
+
+                boolean flag = false;
+                for(DataSnapshot item : dataSnapshot.getChildren()){
+                    Log.d("item: ", item.getKey());
+
+                    if(item.getKey().equals(currentId)){
+                        flag = true;
+                        break;
+                    }
+                }
+
+                if(flag){
+                    Log.d("user: ", "존재");
+                    DatabaseReference wishDB = FirebaseDatabase.getInstance().getReference("wish/" + currentId);
+                    wishDB.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot Snapshot) {
+
+                            boolean flag2 = false;
+                            for(DataSnapshot itm : Snapshot.getChildren()){
+                                Log.d("itm: ", itm.getKey());
+
+                                if(itm.getKey().equals(key)){
+                                    flag2 = true;
+                                    break;
+                                }
+                            }
+
+                            Map<String, Object> update = new HashMap<>();
+                            Map<String, Object> post = new HashMap<>();
+                            post.put("id", currentId);
+                            post.put("wish", key);
+
+
+                            if(flag2){
+                                post = null;
+                                update.put("/" + key, post);
+                                wishDB.updateChildren(update);
+                                Toast.makeText(view.getContext(), "위시리스트에서 삭제하였습니다.", Toast.LENGTH_SHORT).show();
+                            }else{
+                                update.put("/" + key, post);
+                                wishDB.updateChildren(update);
+                                Toast.makeText(view.getContext(), "위시리스트에 추가하였습니다.", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });
+                }else{
+                    Map<String, Object> update = new HashMap<>();
+                    Map<String, Object> post = new HashMap<>();
+                    post.put("id", currentId);
+                    post.put("wish", key);
+                    update.put("/"+currentId + "/" + key, post);
+                    wishDatabase.updateChildren(update);
+                    Toast.makeText(view.getContext(), "위시리스트에 추가하였습니다.", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+
 }

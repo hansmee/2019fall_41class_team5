@@ -23,8 +23,9 @@ public class FrameLayout extends AppCompatActivity implements View.OnClickListen
     private final int Frag2 = 2;
     private final int Frag3 = 3;
     private final int Frag4 = 4;
+    private final int Frag5 = 5;
 
-    ImageButton btn_tab1, btn_tab2, btn_tab3, btn_tab4;
+    ImageButton btn_tab1, btn_tab2, btn_tab3, btn_tab4, btn_tab5;
 
     Intent intent;
     String currentId;
@@ -49,11 +50,13 @@ public class FrameLayout extends AppCompatActivity implements View.OnClickListen
         btn_tab2 = findViewById(R.id.postbtn);
         btn_tab3 = findViewById(R.id.searchbtn);
         btn_tab4 = findViewById(R.id.mypagebtn);
+        btn_tab5 = findViewById(R.id.wishbtn);
 
         btn_tab1.setOnClickListener(this);
         btn_tab2.setOnClickListener(this);
         btn_tab3.setOnClickListener(this);
         btn_tab4.setOnClickListener(this);
+        btn_tab5.setOnClickListener(this);
 
 
         intent = getIntent();
@@ -83,6 +86,9 @@ public class FrameLayout extends AppCompatActivity implements View.OnClickListen
                 break;
             case R.id.mypagebtn :
                 callFragment(Frag4);
+                break;
+            case R.id.wishbtn:
+                callFragment(Frag5);
                 break;
         }
     }
@@ -121,6 +127,14 @@ public class FrameLayout extends AppCompatActivity implements View.OnClickListen
                 transaction.replace(R.id.fragmentContainer, mypageFrag);
                 transaction.commit();
                 mypageFrag.setArguments(bundle);
+                break;
+
+            case 5 :
+
+                WishlistFrag wishlistFrag = new WishlistFrag();
+                transaction.replace(R.id.fragmentContainer, wishlistFrag);
+                transaction.commit();
+                wishlistFrag.setArguments(bundle);
                 break;
 
         }

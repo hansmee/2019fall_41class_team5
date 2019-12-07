@@ -1155,6 +1155,7 @@ drawable fui_idp_button_background_phone
 drawable fui_idp_button_background_twitter
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable heart
 drawable home
 drawable ic_action_arrow
 drawable ic_check_empty
@@ -1189,6 +1190,7 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable picture
+drawable pink_heart
 drawable plus
 drawable round_edit_text
 drawable sceneform_hand_phone
@@ -1607,6 +1609,7 @@ id welcome_back_idp_button
 id welcome_back_idp_prompt
 id welcome_back_password_body
 id wide
+id wishbtn
 id withText
 id wrap
 id wrap_content
@@ -1695,6 +1698,7 @@ layout fragment_mypage
 layout fragment_post
 layout fragment_product
 layout fragment_search
+layout fragment_wishlist
 layout fui_activity_invisible
 layout fui_activity_register_email
 layout fui_activity_register_phone

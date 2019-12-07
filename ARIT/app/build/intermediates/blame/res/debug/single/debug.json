@@ -968,6 +968,10 @@
         "source": "/Users/hansangmee/.gradle/caches/transforms-2/files-2.1/f8ccfb448ba3545203b2c9319e236e39/appcompat-1.1.0/res/drawable-mdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png"
     },
     {
+        "merged": "/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/build/intermediates/res/merged/debug/layout_fragment_wishlist.xml.flat",
+        "source": "/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/res/layout/fragment_wishlist.xml"
+    },
+    {
         "merged": "/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_star_half_black_48dp.png.flat",
         "source": "/Users/hansangmee/.gradle/caches/transforms-2/files-2.1/f8ccfb448ba3545203b2c9319e236e39/appcompat-1.1.0/res/drawable-xxxhdpi-v4/abc_ic_star_half_black_48dp.png"
     },
@@ -1976,6 +1980,10 @@
         "source": "/Users/hansangmee/.gradle/caches/transforms-2/files-2.1/3df2fd68af0236fb7b1a24eeed8b503b/material-1.0.0/res/animator/mtrl_btn_state_list_anim.xml"
     },
     {
+        "merged": "/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/build/intermediates/res/merged/debug/drawable_heart.png.flat",
+        "source": "/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/res/drawable/heart.png"
+    },
+    {
         "merged": "/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/build/intermediates/res/merged/debug/drawable_abc_ic_menu_overflow_material.xml.flat",
         "source": "/Users/hansangmee/.gradle/caches/transforms-2/files-2.1/f8ccfb448ba3545203b2c9319e236e39/appcompat-1.1.0/res/drawable/abc_ic_menu_overflow_material.xml"
     },
@@ -2318,6 +2326,10 @@
     {
         "merged": "/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ab_share_pack_mtrl_alpha.9.png.flat",
         "source": "/Users/hansangmee/.gradle/caches/transforms-2/files-2.1/f8ccfb448ba3545203b2c9319e236e39/appcompat-1.1.0/res/drawable-mdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/build/intermediates/res/merged/debug/drawable_pink_heart.png.flat",
+        "source": "/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/res/drawable/pink_heart.png"
     },
     {
         "merged": "/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/build/intermediates/res/merged/debug/color_abc_background_cache_hint_selector_material_dark.xml.flat",

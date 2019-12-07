@@ -175,6 +175,15 @@
                     android:textColor="@color/white"
                     android:textSize="19dp"
                     android:text="Post" />
+
+                <ImageButton
+                    android:id="@+id/wishbtn"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/pink_heart"
+                    android:background="@android:color/transparent"
+                    android:scaleType="fitCenter"/>
+
             </LinearLayout>
 
             <ListView
