@@ -31,16 +31,6 @@ public class ARMode extends AppCompatActivity {
         setContentView(R.layout.activity_armode);
         fragment = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.fragment);
 
-        back = findViewById(R.id.back);
-
-        back.setOnClickListener(new View.OnClickListener(){
-            Intent intent = new Intent(ARMode.this, FrameLayout.class);
-            @Override
-            public void onClick(View view) {
-                startActivity(intent);
-            }
-        });
-
         fragment.setOnTapArPlaneListener((hitResult, plane, motionEvent) -> {
 
             createCube(hitResult.createAnchor());

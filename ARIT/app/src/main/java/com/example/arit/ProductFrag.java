@@ -7,9 +7,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,7 +31,9 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
@@ -50,7 +54,9 @@ public class ProductFrag extends Fragment {
     String category;    // 카테고리
     String imagename;
     String currID;      //사용자
+    Double plength, pheight, pwidth;
 
+    
     TextView titleTV;       // 제목
     TextView pnameTV;       // 제품명
     TextView unameTV;       // 작성자
@@ -60,15 +66,27 @@ public class ProductFrag extends Fragment {
     TextView detailTV;      // 상세정보
     TextView categoryTV;    // 카테고리
     TextView listComments;  // 코멘트
+    TextView SizeTV;        // 사이즈
+    
     ImageView imageIV;
+
+    ListView coms;
 
 
     EditText comment;   //Comment
 
-    Button postCom, arMode;     //Comment Post button
+    Button postCom;     //Comment Post button
+
+    Button arMode;     //Comment Post button
 
     Intent intent;
 
+    ArrayList<String> comments;
+    ArrayAdapter<String> adapter;
+    List<String> dataList;
+    ArrayAdapter<String> arrayAdapter;
+
+    private MyAdapter myAdapter;
     private DatabaseReference commentDatabase;
 
     @Override
@@ -91,8 +109,12 @@ public class ProductFrag extends Fragment {
             detail = bundle.getString("detail");
             imagename = bundle.getString("imagename");
             currID = bundle.getString("currentID");
+            plength = bundle.getDouble("length");
+            pheight = bundle.getDouble("height");
+            pwidth = bundle.getDouble("width");            
         }
 
+        String SizeInfo = "길이: " + plength + "높이: " + pheight + "길이: " + pwidth;
 
 
         titleTV = view.findViewById(R.id.title);
@@ -107,8 +129,9 @@ public class ProductFrag extends Fragment {
         listComments = view.findViewById(R.id.comments);
         comment = view.findViewById(R.id.commentEdit);
         postCom = view.findViewById(R.id.commentButton);
+        coms = view.findViewById(R.id.commentList);
         arMode = view.findViewById(R.id.arMode);
-
+        SizeTV = view.findViewById(R.id.size);
 
         // intent로부터 받은 정보 텍스트뷰에 넣기
         titleTV.setText(title);
@@ -119,6 +142,8 @@ public class ProductFrag extends Fragment {
         categoryTV.setText("카테고리: " + category);
         contactTV.setText("연락처: " + contact);
         detailTV.setText("상세 정보: " + detail);
+
+        SizeTV.setText(SizeInfo);
 
         // Instance of product comment section
         commentDatabase = FirebaseDatabase.getInstance().getReference("Comment"+"/"+pname);
@@ -139,19 +164,24 @@ public class ProductFrag extends Fragment {
             }
         });
 
+        dataList = new ArrayList<>();
+        dataList.clear();
+
 
         //Get comments from Firebase
         getComments();
 
-
-
-
-
         //Post to Firebase
         postCom.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v){
-                postComment(pname, comment.getText().toString(), currID, pname);
-                getComments();
+
+                if(comment.getText().toString().length() > 0)
+                {
+                    postComment(pname, comment.getText().toString(), currID, pname);
+                    getComments();
+                }
+
+
             }
         });
 
@@ -173,32 +203,49 @@ public class ProductFrag extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                String allComments = "";
+                dataList.clear();
+
 
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    GenericTypeIndicator<Map<String, Object>> genericTypeIndicator = new GenericTypeIndicator<Map<String, Object>>() {};
-                    Map<String, Object> map = snapshot.child("").getValue(genericTypeIndicator);
+                    String ID=snapshot.child("id").getValue().toString();
+                    String text=snapshot.child("text").getValue().toString();
 
-                    String tempStorage = map.toString();
 
-                    String tempArray[] = tempStorage.replaceAll("[{}]", "").split(",");
 
-                    String text = "", ID = "";
+                    String incSize = "";
+                    String allComm = "";
+                    String space = " ";
+                    while(true) {
+                        DataSnapshot tempSnap = snapshot.child(incSize);
 
-                    for(int i = 0; i < 2; i++)
-                    {
-                        if(tempArray[i].charAt(0) == 't'){                                           text = tempArray[i].substring(5);                        }
-                        else if((tempArray[i].charAt(0) == ' ' && tempArray[i].charAt(1) == 't')){   text = tempArray[i].substring(6);                         }
+                        if(tempSnap.hasChild("reply")) {
 
-                        if(tempArray[i].charAt(0) == 'i'){                                           ID = tempArray[i].substring(3);                        }
-                        else if((tempArray[i].charAt(0) == ' ' && tempArray[i].charAt(1) == 'i')){   ID = tempArray[i].substring(4);                         }
+                            String replyID = tempSnap.child("reply").child("id").getValue().toString();
+                            String replytext = tempSnap.child("reply").child("text").getValue().toString();
+                            allComm += "\n" + space + replyID + ": " + replytext + "\n ";
+
+                            incSize += "/reply";
+                            space += "    ";
+
+                        }
+                        else{
+                            break;
+                        }
+
+                    }
+                    if(allComm.length() > 2)
+                        dataList.add(ID + ": " + text + "\n  " + allComm);
+                    else{
+                        dataList.add(ID+": "+text);
+
                     }
 
-                    allComments += ID+": "+text+"\n";
-
                 }
-                listComments.setText(allComments);
 
+                Log.e("tag", dataList.toString());
+
+                myAdapter = new MyAdapter(getActivity(), pname, (ArrayList) dataList, currID);
+                coms.setAdapter(myAdapter);
 
             }
             @Override

@@ -12,14 +12,14 @@ public final class R {
     public static final class drawable {
         private drawable() {}
 
-        public static final int sceneform_plane = 0x7f0800a4;
+        public static final int sceneform_plane = 0x7f0800b8;
     }
     public static final class id {
         private id() {}
 
-        public static final int __arcore_cancelButton = 0x7f0a0007;
-        public static final int __arcore_continueButton = 0x7f0a0008;
-        public static final int __arcore_messageText = 0x7f0a0009;
+        public static final int __arcore_cancelButton = 0x7f0a000e;
+        public static final int __arcore_continueButton = 0x7f0a000f;
+        public static final int __arcore_messageText = 0x7f0a0010;
     }
     public static final class layout {
         private layout() {}
@@ -30,15 +30,15 @@ public final class R {
         private raw() {}
 
         public static final int keep_arcore = 0x7f100000;
-        public static final int sceneform_camera_material = 0x7f100001;
-        public static final int sceneform_default_light_probe = 0x7f100002;
-        public static final int sceneform_opaque_colored_material = 0x7f100006;
-        public static final int sceneform_opaque_textured_material = 0x7f100007;
-        public static final int sceneform_plane_material = 0x7f100008;
-        public static final int sceneform_plane_shadow_material = 0x7f100009;
-        public static final int sceneform_transparent_colored_material = 0x7f10000a;
-        public static final int sceneform_transparent_textured_material = 0x7f10000b;
-        public static final int sceneform_view_renderable = 0x7f10000c;
+        public static final int sceneform_camera_material = 0x7f100008;
+        public static final int sceneform_default_light_probe = 0x7f100009;
+        public static final int sceneform_opaque_colored_material = 0x7f10000d;
+        public static final int sceneform_opaque_textured_material = 0x7f10000e;
+        public static final int sceneform_plane_material = 0x7f10000f;
+        public static final int sceneform_plane_shadow_material = 0x7f100010;
+        public static final int sceneform_transparent_colored_material = 0x7f100011;
+        public static final int sceneform_transparent_textured_material = 0x7f100012;
+        public static final int sceneform_view_renderable = 0x7f100013;
     }
     public static final class string {
         private string() {}
@@ -48,6 +48,6 @@ public final class R {
         public static final int __arcore_install_app = 0x7f110002;
         public static final int __arcore_install_feature = 0x7f110003;
         public static final int __arcore_installing = 0x7f110004;
-        public static final int lib_name = 0x7f1100ae;
+        public static final int lib_name = 0x7f1100ab;
     }
 }

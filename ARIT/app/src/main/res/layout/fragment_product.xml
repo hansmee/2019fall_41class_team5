@@ -17,18 +17,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:textSize="23dp"
-            android:textColor="@color/white" />
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="15dp">
+            android:layout_height="0dp"
+            android:layout_weight="6"
+            android:fadeScrollbars="false"
+            android:scrollbarFadeDuration="0"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:scrollbarThumbVertical="@color/white"
+            android:scrollbarTrackVertical="@color/black"
+            android:scrollbarSize="2dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -36,6 +35,15 @@
                 android:background="@android:color/black"
                 android:orientation="vertical"
                 android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textSize="23dp"
+                    android:textColor="@color/white"
+                    android:background="@color/transparent"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -110,6 +118,13 @@
                         android:textColor="@color/white"
                         android:textSize="17dp" />
 
+                    <TextView
+                        android:id="@+id/size"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/white"/>
+
                     <Button
                         android:id="@+id/arMode"
                         android:layout_width="match_parent"
@@ -122,21 +137,25 @@
 
                 </LinearLayout>
 
+            </LinearLayout>
 
-                <TextView
-                    android:id="@+id/comments"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:textColor="@color/white"
-                    android:textSize="17dp" />
+        </ScrollView>
 
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="15dp">
 
                 <LinearLayout
                     android:id="@+id/linearLayout5"
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
+                    android:layout_height="25dp"
                     android:orientation="horizontal">
 
                     <EditText
@@ -162,15 +181,27 @@
                         android:text="Post" />
                 </LinearLayout>
 
+                <ListView
+                    android:id="@+id/commentList"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="10"
+                    android:background="@color/transparent"
+                    android:focusable="true"
+                    android:gravity="top"
+                    android:fadeScrollbars="false"
+                    android:scrollbarFadeDuration="0"
+                    android:scrollbarAlwaysDrawVerticalTrack="true"
+                    android:scrollbarThumbVertical="@color/white"
+                    android:scrollbarTrackVertical="@color/black"
+                    android:scrollbarSize="2dp" />
+
             </LinearLayout>
-
-
 
         </ScrollView>
 
-
-
     </LinearLayout>
-
 
 </FrameLayout>

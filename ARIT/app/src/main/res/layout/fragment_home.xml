@@ -50,7 +50,13 @@
                 android:id="@+id/recent_list"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:color/white" />
+                android:background="@android:color/white"
+                android:fadeScrollbars="false"
+                android:scrollbarFadeDuration="0"
+                android:scrollbarAlwaysDrawVerticalTrack="true"
+                android:scrollbarThumbVertical="@color/white"
+                android:scrollbarTrackVertical="@color/black"
+                android:scrollbarSize="2dp" />
 
         </LinearLayout>
 
