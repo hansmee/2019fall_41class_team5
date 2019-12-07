@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -22,9 +23,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 
-public class MypageFrag extends Fragment {
+public class MypageFrag extends Fragment implements OnItemClick {
 
     public MypageFrag() {
         // Required empty public constructor
@@ -72,7 +75,7 @@ public class MypageFrag extends Fragment {
         idTV.setText("ID: " + currentId);
         nameTV.setText("NAME: " + currentName);
 
-        getFirebaseDatabase(view);
+        getFirebaseDatabase(view, this);
 
 
         return view;
@@ -103,7 +106,7 @@ public class MypageFrag extends Fragment {
 
     }
 
-    public void getFirebaseDatabase(View view) {
+    public void getFirebaseDatabase(View view, OnItemClick listener) {
         mPostReference = FirebaseDatabase.getInstance().getReference().child("product");
         mPostReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -122,7 +125,7 @@ public class MypageFrag extends Fragment {
 
                 Log.d("product list: ", products.toString());
 
-                productAdapter = new MypageAdapter(view.getContext(), products);
+                productAdapter = new MypageAdapter(view.getContext(), products, listener);
                 Log.d("productAdapter: ", productAdapter.toString());
                 Log.d("recent: ", recent.toString());
 
@@ -150,12 +153,27 @@ public class MypageFrag extends Fragment {
 
                     }
                 });
+
+                productAdapter.notifyDataSetChanged();
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
             }
         });
+    }
+
+    @Override
+    public void onClick(String value){
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("product");
+        Map<String, Object> update = new HashMap<>();
+        Map<String, Object> post = null;
+
+        update.put("/" + value, post);
+        ref.updateChildren(update);
+
+        Toast.makeText(getActivity(), "삭제되었습니다.", Toast.LENGTH_SHORT).show();
+        getFirebaseDatabase(getView(), this);
     }
 
 }
