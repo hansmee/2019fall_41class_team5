@@ -13,11 +13,11 @@ public class ProductItem {
     private String detail;      // 상세정보
     private String category;    // 카테고리
     private String imagename; // 이미지
-    private double length_size, height_size, width_size;
+    private double length, height, width;
 
     public ProductItem(){}
 
-    public ProductItem(String title, String pname, String uname, String price, String how, String contact, String detail, String category, String imagename, double length_size, double height_size, double width_size){
+    public ProductItem(String title, String pname, String uname, String price, String how, String contact, String detail, String category, String imagename, double length, double heigth, double width){
         this.title = title;
         this.pname = pname;
         this.uname = uname;
@@ -27,9 +27,9 @@ public class ProductItem {
         this.detail = detail;
         this.category = category;
         this.imagename = imagename;
-        this.length_size = length_size;
-        this.height_size = height_size;
-        this.width_size = width_size;
+        this.length = length;
+        this.height = heigth;
+        this.width = width;
     }
 
     public String getTitle() {
@@ -67,12 +67,12 @@ public class ProductItem {
     public String getImagename() {
         return imagename;
     }
-    
-    public double getLength_size() { return length_size; }
 
-    public double getHeight_size() { return height_size; }
+    public double getLength() { return length; }
 
-    public double getWidth_size(){ return width_size; }    
+    public double getHeight() { return height; }
+
+    public double getWidth(){ return width; }
 
     public Map<String, Object> toMap(){
         HashMap<String, Object> res = new HashMap<>();
@@ -85,9 +85,9 @@ public class ProductItem {
         res.put("detail", detail);
         res.put("category", category);
         res.put("imagename", imagename);
-        res.put("length", length_size);
-        res.put("height", height_size);
-        res.put("width", width_size);        
+        res.put("length", length);
+        res.put("height", height);
+        res.put("width", width);
         return res;
     }
 }

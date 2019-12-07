@@ -9,6 +9,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.arit.hl3hl3.measure.ArMeasureActivity;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -49,6 +51,9 @@ public class PostFrag extends Fragment {
     String category;    // 카테고리
     String image;
     public double length_size,height_size,width_size;
+    String test;
+    String test2;
+    String test3;
 
 
     Uri filepath;
@@ -99,6 +104,16 @@ public class PostFrag extends Fragment {
 
             }
         });
+
+        // AR Measure 로 이동
+        measure.setOnClickListener(new Button.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), ArMeasureActivity.class);
+                startActivityForResult(intent, 3);
+            }
+        });
+
 
         mPostReference = FirebaseDatabase.getInstance().getReference();
 
@@ -197,7 +212,23 @@ public class PostFrag extends Fragment {
     // 사진 가져오기
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        Log.e("dim", "Entered");
+
+
         super.onActivityResult(requestCode, resultCode, data);
+        test = data.getStringExtra("length_meas");
+        test2 = data.getStringExtra("height_meas");
+        test3 = data.getStringExtra("width_meas");
+
+        EditText lengthEdit = view.findViewById(R.id.LengthET);
+        EditText heightEdit = view.findViewById(R.id.HeightET);
+        EditText widthEdit = view.findViewById(R.id.WidthET);
+
+        Log.e("dim", Integer.toString(requestCode));
+
+
+        //super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == 0 && resultCode == Activity.RESULT_OK){
             filepath = data.getData();
             try {
@@ -206,6 +237,14 @@ public class PostFrag extends Fragment {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        }
+        else if (resultCode == 4){
+
+            lengthEdit.setText(Double.toString(Math.round(Double.parseDouble(test))));
+            heightEdit.setText(Double.toString(Math.round(Double.parseDouble(test2))));
+            widthEdit.setText(Double.toString(Math.round(Double.parseDouble(test3))));
+
+
         }
     }
 

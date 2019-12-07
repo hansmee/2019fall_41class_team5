@@ -10,6 +10,10 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +23,9 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -41,8 +48,15 @@ public class MypageFrag extends Fragment implements OnItemClick {
     String currentName;
     String phoneNum;
 
+
     TextView idTV;
     TextView nameTV;
+
+    Intent intent;
+    Button LogOut;
+
+    SharedPreferences loginPref;
+
     TextView phoneTV;
 
     DatabaseReference mPostReference;
@@ -81,6 +95,11 @@ public class MypageFrag extends Fragment implements OnItemClick {
 
         idTV = view.findViewById(R.id.mypage_idTV);
         nameTV = view.findViewById(R.id.mypage_nameTV);
+
+        LogOut = view.findViewById(R.id.logout_button);
+        TextView idTV = view.findViewById(R.id.mypage_idTV);
+        TextView nameTV = view.findViewById(R.id.mypage_nameTV);
+
         phoneTV = view.findViewById(R.id.mypage_phoneTV);
 
         recent = view.findViewById(R.id.product_list);
@@ -96,10 +115,36 @@ public class MypageFrag extends Fragment implements OnItemClick {
         listener = this;
 
         getFirebaseDatabase(view, this);
+        intent = new Intent();
+        intent = intent.setClass(getActivity(), MainActivity.class);
+
+        LogOut.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+
+                loginPref = PreferenceManager.getDefaultSharedPreferences(view.getContext());
+                SharedPreferences.Editor editor = loginPref.edit();
+                editor.putString("userid", null);
+                editor.putString("userName", null);
+                editor.apply();
+
+                getActivity().startActivity(intent);
+                getActivity().finish();
+
+
+
+
+            }
+        });
+
+
 
 
         return view;
     }
+
+
 
     public void getPhoneNum() {
 

@@ -29,22 +29,32 @@ public class ARMode extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_armode);
+
+        Intent intent = getIntent();
+        double length = intent.getExtras().getDouble("length");
+        double height = intent.getExtras().getDouble("height");
+        double width = intent.getExtras().getDouble("width");
+
+
+
         fragment = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.fragment);
 
         fragment.setOnTapArPlaneListener((hitResult, plane, motionEvent) -> {
 
-            createCube(hitResult.createAnchor());
+            createCube(hitResult.createAnchor(), length, height, width);
 
         });
     }
 
 
-    private void createCube(Anchor anchor) {
+
+
+    private void createCube(Anchor anchor, double length, double height, double width) {
 
         MaterialFactory
-                .makeOpaqueWithColor(this, new Color(android.graphics.Color.rgb(250, 128, 114)))
+                .makeOpaqueWithColor(this, new Color(android.graphics.Color.rgb(200, 200, 200)))
                 .thenAccept(material -> {
-                    ModelRenderable modelRenderable = ShapeFactory.makeCube(new Vector3(0.1f, 0.1f, 0.1f), new Vector3(0, 0, 0), material);
+                    ModelRenderable modelRenderable = ShapeFactory.makeCube(new Vector3((float)length/100, (float)height/100, (float)width/100), new Vector3(0, (float)height/200, 0), material);
 
                     placeModel(modelRenderable, anchor);
                 });

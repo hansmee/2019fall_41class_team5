@@ -1,9 +1,9 @@
 package com.example.arit;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
@@ -59,7 +59,9 @@ public class MainActivity extends AppCompatActivity {
         loginButton = (Button) findViewById(R.id.loginButton);
         signupButton = (Button) findViewById(R.id.signupButton);
         uDatabase = FirebaseDatabase.getInstance().getReference("user");
-        loginPref = this.getPreferences(Context.MODE_PRIVATE);
+
+        loginPref = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+
 
 
         final Intent intent = new Intent(MainActivity.this, FrameLayout.class);
@@ -105,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(intent2);
+                finish();
             }
         });
 
@@ -147,6 +150,7 @@ public class MainActivity extends AppCompatActivity {
                         intent.putExtra("currentId", userId);
                         intent.putExtra("currentName", userName);
                         startActivity(intent);
+                        finish();
                         break;
                     }
 

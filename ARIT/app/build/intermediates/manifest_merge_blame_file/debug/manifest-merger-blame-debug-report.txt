@@ -80,8 +80,8 @@
 41-->/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:24:13-45
 42            android:screenOrientation="locked"
 42-->/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:27:13-47
-43            android:theme="@style/Theme.AppCompat.NoActionBar" >
-43-->/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:26:13-63
+43            android:theme="@style/Theme.AppCompat.Light" >
+43-->/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:26:13-57
 44        </activity>
 45        <activity android:name="com.example.arit.MainActivity" >
 45-->/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:31:9-37:20

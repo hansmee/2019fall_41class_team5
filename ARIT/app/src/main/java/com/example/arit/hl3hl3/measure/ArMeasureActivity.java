@@ -1,6 +1,7 @@
 package com.example.arit.hl3hl3.measure;
 
 import android.content.Context;
+import android.content.Intent;
 import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
 import android.opengl.Matrix;
@@ -15,6 +16,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.PopupWindow;
@@ -22,9 +24,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.crashlytics.android.Crashlytics;
 import com.example.arit.BuildConfig;
+import com.example.arit.HomeFrag;
+import com.example.arit.PostFrag;
 import com.example.arit.R;
 import com.example.arit.google.ar.core.examples.java.helloar.CameraPermissionHelper;
 import com.example.arit.google.ar.core.examples.java.helloar.DisplayRotationHelper;
@@ -71,7 +77,9 @@ import io.fabric.sdk.android.Fabric;
  * Created by user on 2017/9/25.
  */
 
+
 public class ArMeasureActivity extends AppCompatActivity {
+
     private static final String TAG = ArMeasureActivity.class.getSimpleName();
     private static final String ASSET_NAME_CUBE_OBJ = "cube.obj";
     private static final String ASSET_NAME_CUBE = "cube_green.png";
@@ -118,6 +126,9 @@ public class ArMeasureActivity extends AppCompatActivity {
             R.id.iv_cube15,
             R.id.iv_cube16
     };
+    PostFrag postFrag = new PostFrag();
+    ////////////////////////////////사이즈 정보 받아오기
+    Button back_btn;
 
     // Tap handling and UI.
     private ArrayBlockingQueue<MotionEvent> queuedSingleTaps = new ArrayBlockingQueue<>(MAX_CUBE_COUNT);
@@ -129,6 +140,11 @@ public class ArMeasureActivity extends AppCompatActivity {
     private ArrayBlockingQueue<Float> queuedScrollDx = new ArrayBlockingQueue<>(MAX_CUBE_COUNT);
     private ArrayBlockingQueue<Float> queuedScrollDy = new ArrayBlockingQueue<>(MAX_CUBE_COUNT);
 
+    /////////////////////////////////////////////////////
+    double length_meas;
+    double height_meas;
+    double width_meas;
+    /////////////////////////////////////////////////////
     private void log(String tag, String log){
         if(BuildConfig.DEBUG) {
             Log.d(tag, log);
@@ -190,11 +206,47 @@ public class ArMeasureActivity extends AppCompatActivity {
         }
     };
 
+    public void changeFragment(Fragment fragment, Bundle bundle){
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragmentContainer, fragment);
+        transaction.commit();
+        fragment.setArguments(bundle);
+
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_armeasure);
+
+
+        /////////////// 돌아가기 버튼 만들기///////////////
+        Button back_btn = findViewById(R.id.Back);
+        back_btn.setOnClickListener(new Button.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+
+                Log.e("dim", Double.toString(length_meas));
+                Log.e("dim", Double.toString(height_meas));
+                Log.e("dim", Double.toString(width_meas));
+
+
+
+                Intent intent = new Intent(ArMeasureActivity.this, PostFrag.class);
+
+                intent.putExtra("length_meas", Double.toString(length_meas));
+                intent.putExtra("height_meas", Double.toString(height_meas));
+                intent.putExtra("width_meas", Double.toString(width_meas));
+
+                setResult(4, intent);
+
+                finish();
+            }
+        });
+
+
+
 
 //        overlayViewForTest = (OverlayView)findViewById(R.id.overlay_for_test);
         tv_result = findViewById(R.id.tv_result);
@@ -626,6 +678,11 @@ public class ArMeasureActivity extends AppCompatActivity {
 
         @Override
         public void onDrawFrame(GL10 gl) {
+
+
+
+
+
 //            log(TAG, "onDrawFrame(), mTouches.size=" + mTouches.size());
             // Clear screen to notify driver it should not load any pixels from previous frame.
             GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT | GLES20.GL_DEPTH_BUFFER_BIT);
@@ -712,18 +769,24 @@ public class ArMeasureActivity extends AppCompatActivity {
                         checkIfHit(cube, i);
                         log("onDrawFrame()", "before drawLine()");
 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                         float distanceCm = ((int) (getDistance(point0, point1) * 1000)) / 10.0f;
                         if (i == 1) {
                             drawLine(point0, point1, viewmtx, projmtx);
                             sb.append("Length: ").append(distanceCm).append("cm  ");
+                            length_meas = distanceCm;
+
                         }
                         if (i == 3) {
                             drawLine(point0, point1, viewmtx, projmtx);
                             sb.append("Height: ").append(distanceCm).append("cm  ");
+                            height_meas = distanceCm;
                         }
                         if (i == 5) {
                             drawLine(point0, point1, viewmtx, projmtx);
                             sb.append("Width: ").append(distanceCm).append("cm  \n After check results, click post button.");
+                            width_meas = distanceCm;
                         }
                         if(i%2 == 0) {
                             point0 = point1;
@@ -732,6 +795,8 @@ public class ArMeasureActivity extends AppCompatActivity {
                     // show result
                     String result = guide + sb.toString();
                     showResult(result);
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
                 }
                 /*if(anchors.size() < 1){
                     // no point
@@ -779,8 +844,8 @@ public class ArMeasureActivity extends AppCompatActivity {
                         // Creates an anchor if a plane or an oriented point was hit.
                         if (trackable instanceof Plane && ((Plane) trackable).isPoseInPolygon(hit.getHitPose())
                                 || (trackable instanceof Point
-                                    && ((Point) trackable).getOrientationMode()
-                                        == Point.OrientationMode.ESTIMATED_SURFACE_NORMAL)) {
+                                && ((Point) trackable).getOrientationMode()
+                                == Point.OrientationMode.ESTIMATED_SURFACE_NORMAL)) {
                             // Cap the number of objects created. This avoids overloading both the
                             // rendering system and ARCore.
                             if (anchors.size() >= 16) {

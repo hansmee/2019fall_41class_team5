@@ -12,12 +12,12 @@
         "source": "/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/build/intermediates/res/merged/debug/layout_design_layout_tab_text.xml.flat",
-        "source": "/Users/hansangmee/.gradle/caches/transforms-2/files-2.1/3df2fd68af0236fb7b1a24eeed8b503b/material-1.0.0/res/layout/design_layout_tab_text.xml"
-    },
-    {
         "merged": "/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_googleg_standard_color_18.png.flat",
         "source": "/Users/hansangmee/.gradle/caches/transforms-2/files-2.1/c6ed24259e187418524151309c91ad64/play-services-base-17.1.0/res/drawable-xhdpi-v4/googleg_standard_color_18.png"
+    },
+    {
+        "merged": "/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/build/intermediates/res/merged/debug/layout_design_layout_tab_text.xml.flat",
+        "source": "/Users/hansangmee/.gradle/caches/transforms-2/files-2.1/3df2fd68af0236fb7b1a24eeed8b503b/material-1.0.0/res/layout/design_layout_tab_text.xml"
     },
     {
         "merged": "/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
@@ -48,16 +48,16 @@
         "source": "/Users/hansangmee/.gradle/caches/transforms-2/files-2.1/3df2fd68af0236fb7b1a24eeed8b503b/material-1.0.0/res/layout/design_bottom_sheet_dialog.xml"
     },
     {
-        "merged": "/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
-        "source": "/Users/hansangmee/.gradle/caches/transforms-2/files-2.1/f8ccfb448ba3545203b2c9319e236e39/appcompat-1.1.0/res/drawable-mdpi-v4/abc_btn_check_to_on_mtrl_000.png"
+        "merged": "/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/build/intermediates/res/merged/debug/drawable_abc_btn_check_material.xml.flat",
+        "source": "/Users/hansangmee/.gradle/caches/transforms-2/files-2.1/f8ccfb448ba3545203b2c9319e236e39/appcompat-1.1.0/res/drawable/abc_btn_check_material.xml"
     },
     {
         "merged": "/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/build/intermediates/res/merged/debug/layout_abc_screen_simple_overlay_action_mode.xml.flat",
         "source": "/Users/hansangmee/.gradle/caches/transforms-2/files-2.1/f8ccfb448ba3545203b2c9319e236e39/appcompat-1.1.0/res/layout/abc_screen_simple_overlay_action_mode.xml"
     },
     {
-        "merged": "/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/build/intermediates/res/merged/debug/drawable_abc_btn_check_material.xml.flat",
-        "source": "/Users/hansangmee/.gradle/caches/transforms-2/files-2.1/f8ccfb448ba3545203b2c9319e236e39/appcompat-1.1.0/res/drawable/abc_btn_check_material.xml"
+        "merged": "/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
+        "source": "/Users/hansangmee/.gradle/caches/transforms-2/files-2.1/f8ccfb448ba3545203b2c9319e236e39/appcompat-1.1.0/res/drawable-mdpi-v4/abc_btn_check_to_on_mtrl_000.png"
     },
     {
         "merged": "/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/build/intermediates/res/merged/debug/color_mtrl_chip_ripple_color.xml.flat",
@@ -144,12 +144,12 @@
         "source": "/Users/hansangmee/.gradle/caches/transforms-2/files-2.1/2fa2decff341b45128a76f29cdd9b6f1/jetified-firebase-ui-auth-5.0.0/res/layout/fui_email_link_cross_device_linking.xml"
     },
     {
-        "merged": "/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
-        "source": "/Users/hansangmee/.gradle/caches/transforms-2/files-2.1/f8ccfb448ba3545203b2c9319e236e39/appcompat-1.1.0/res/drawable-mdpi-v4/abc_btn_radio_to_on_mtrl_015.png"
-    },
-    {
         "merged": "/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
         "source": "/Users/hansangmee/.gradle/caches/transforms-2/files-2.1/f8ccfb448ba3545203b2c9319e236e39/appcompat-1.1.0/res/drawable-xhdpi-v4/abc_btn_radio_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
+        "source": "/Users/hansangmee/.gradle/caches/transforms-2/files-2.1/f8ccfb448ba3545203b2c9319e236e39/appcompat-1.1.0/res/drawable-mdpi-v4/abc_btn_radio_to_on_mtrl_015.png"
     },
     {
         "merged": "/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
@@ -1972,16 +1972,16 @@
         "source": "/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/res/raw/plane_fragment.shader"
     },
     {
+        "merged": "/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/build/intermediates/res/merged/debug/drawable_heart.png.flat",
+        "source": "/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/res/drawable/heart.png"
+    },
+    {
         "merged": "/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_common_full_open_on_phone.png.flat",
         "source": "/Users/hansangmee/.gradle/caches/transforms-2/files-2.1/c6ed24259e187418524151309c91ad64/play-services-base-17.1.0/res/drawable-hdpi-v4/common_full_open_on_phone.png"
     },
     {
         "merged": "/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/build/intermediates/res/merged/debug/animator_mtrl_btn_state_list_anim.xml.flat",
         "source": "/Users/hansangmee/.gradle/caches/transforms-2/files-2.1/3df2fd68af0236fb7b1a24eeed8b503b/material-1.0.0/res/animator/mtrl_btn_state_list_anim.xml"
-    },
-    {
-        "merged": "/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/build/intermediates/res/merged/debug/drawable_heart.png.flat",
-        "source": "/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/res/drawable/heart.png"
     },
     {
         "merged": "/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/build/intermediates/res/merged/debug/drawable_abc_ic_menu_overflow_material.xml.flat",
@@ -2240,12 +2240,12 @@
         "source": "/Users/hansangmee/.gradle/caches/transforms-2/files-2.1/c6ed24259e187418524151309c91ad64/play-services-base-17.1.0/res/drawable/common_google_signin_btn_text_dark_normal.xml"
     },
     {
-        "merged": "/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/build/intermediates/res/merged/debug/layout_design_navigation_menu_item.xml.flat",
-        "source": "/Users/hansangmee/.gradle/caches/transforms-2/files-2.1/3df2fd68af0236fb7b1a24eeed8b503b/material-1.0.0/res/layout/design_navigation_menu_item.xml"
-    },
-    {
         "merged": "/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/build/intermediates/res/merged/debug/layout_my_list_item.xml.flat",
         "source": "/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/res/layout/my_list_item.xml"
+    },
+    {
+        "merged": "/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/build/intermediates/res/merged/debug/layout_design_navigation_menu_item.xml.flat",
+        "source": "/Users/hansangmee/.gradle/caches/transforms-2/files-2.1/3df2fd68af0236fb7b1a24eeed8b503b/material-1.0.0/res/layout/design_navigation_menu_item.xml"
     },
     {
         "merged": "/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/build/intermediates/res/merged/debug/layout_abc_alert_dialog_button_bar_material.xml.flat",
@@ -2328,12 +2328,12 @@
         "source": "/Users/hansangmee/.gradle/caches/transforms-2/files-2.1/3df2fd68af0236fb7b1a24eeed8b503b/material-1.0.0/res/color/design_error.xml"
     },
     {
-        "merged": "/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ab_share_pack_mtrl_alpha.9.png.flat",
-        "source": "/Users/hansangmee/.gradle/caches/transforms-2/files-2.1/f8ccfb448ba3545203b2c9319e236e39/appcompat-1.1.0/res/drawable-mdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png"
-    },
-    {
         "merged": "/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/build/intermediates/res/merged/debug/drawable_pink_heart.png.flat",
         "source": "/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/res/drawable/pink_heart.png"
+    },
+    {
+        "merged": "/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ab_share_pack_mtrl_alpha.9.png.flat",
+        "source": "/Users/hansangmee/.gradle/caches/transforms-2/files-2.1/f8ccfb448ba3545203b2c9319e236e39/appcompat-1.1.0/res/drawable-mdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png"
     },
     {
         "merged": "/Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/build/intermediates/res/merged/debug/color_abc_background_cache_hint_selector_material_dark.xml.flat",

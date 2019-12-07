@@ -263,7 +263,7 @@ ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/A
 	android:configChanges
 		ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:25:13-59
 	android:theme
-		ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:26:13-63
+		ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:26:13-57
 	android:name
 		ADDED from /Users/hansangmee/AndroidStudioProjects/ARIT/2019fall_41class_team5/ARIT/app/src/main/AndroidManifest.xml:23:13-61
 activity#com.example.arit.MainActivity

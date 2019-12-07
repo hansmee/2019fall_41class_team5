@@ -129,7 +129,13 @@ public class SearchFrag extends Fragment {
                         productInfo.putString("detail",products.get(i).getDetail());
                         productInfo.putString("imagename", products.get(i).getImagename());
                         productInfo.putString("category", products.get(i).getCategory());
+                        double length_p = products.get(i).getLength();
+                        double height_p = products.get(i).getHeight();
+                        double width_p = products.get(i).getWidth();
 
+                        productInfo.putString("length", Double.toString(length_p));
+                        productInfo.putString("height", Double.toString(height_p));
+                        productInfo.putString("width", Double.toString(width_p));
 
                         ((FrameLayout)getActivity()).changeFragment(ProductFrag.newInstance(), productInfo);
 

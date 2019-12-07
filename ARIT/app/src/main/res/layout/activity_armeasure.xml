@@ -20,12 +20,23 @@
     android:layout_height="match_parent"
     tools:context=".hl3hl3.measure.ArMeasureActivity">
 
+
+    <Button
+        android:id="@+id/Back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="0dp"
+        android:text="back" />
+
     <FrameLayout
         android:id="@+id/fl_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/tv_result_label"
-        />
+        >
+
+    </FrameLayout>
 
     <android.opengl.GLSurfaceView
         android:id="@+id/surfaceview"
