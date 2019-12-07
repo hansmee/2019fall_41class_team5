@@ -109,6 +109,7 @@ public class FrameLayout extends AppCompatActivity implements View.OnClickListen
 
                 PostFrag postFrag = new PostFrag();
                 transaction.replace(R.id.fragmentContainer, postFrag);
+
                 transaction.commit();
                 postFrag.setArguments(bundle);
                 break;
@@ -117,6 +118,7 @@ public class FrameLayout extends AppCompatActivity implements View.OnClickListen
 
                 SearchFrag searchFrag = new SearchFrag();
                 transaction.replace(R.id.fragmentContainer, searchFrag);
+
                 transaction.commit();
                 searchFrag.setArguments(bundle);
                 break;
@@ -125,6 +127,7 @@ public class FrameLayout extends AppCompatActivity implements View.OnClickListen
 
                 MypageFrag mypageFrag = new MypageFrag();
                 transaction.replace(R.id.fragmentContainer, mypageFrag);
+
                 transaction.commit();
                 mypageFrag.setArguments(bundle);
                 break;
@@ -133,6 +136,7 @@ public class FrameLayout extends AppCompatActivity implements View.OnClickListen
 
                 WishlistFrag wishlistFrag = new WishlistFrag();
                 transaction.replace(R.id.fragmentContainer, wishlistFrag);
+
                 transaction.commit();
                 wishlistFrag.setArguments(bundle);
                 break;
@@ -142,6 +146,8 @@ public class FrameLayout extends AppCompatActivity implements View.OnClickListen
     public void changeFragment(Fragment fragment, Bundle bundle){
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fragmentContainer, fragment);
+        transaction.addToBackStack(null);
+
         transaction.commit();
         fragment.setArguments(bundle);
 
