@@ -33,13 +33,15 @@ public class MyAdapter extends BaseAdapter {
     String updateText = "";
     ViewHolder holder;
     String uID = "";
+    String comName = "";
     int i = 0;
 
-    public MyAdapter(Context context, String pname2, ArrayList dataList, String userID) {
+    public MyAdapter(Context context, String pname2, ArrayList dataList, String userID, String comName2 ) {
         pname = pname2;
         mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.myItems = dataList;
         uID = userID;
+        comName = comName2;
 
         notifyDataSetChanged();
     }
@@ -82,7 +84,7 @@ public class MyAdapter extends BaseAdapter {
 
         Button temp = convertView.findViewById(R.id.replyButton);
 
-        commentDatabase = FirebaseDatabase.getInstance().getReference("Comment"+"/"+pname);
+        commentDatabase = FirebaseDatabase.getInstance().getReference("Comment"+"/"+comName);
 
 
         final View finalConvertView = convertView;
