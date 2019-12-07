@@ -54,7 +54,9 @@ public class ProductFrag extends Fragment {
     String category;    // 카테고리
     String imagename;
     String currID;      //사용자
+    Double plength, pheight, pwidth;
 
+    
     TextView titleTV;       // 제목
     TextView pnameTV;       // 제품명
     TextView unameTV;       // 작성자
@@ -64,6 +66,8 @@ public class ProductFrag extends Fragment {
     TextView detailTV;      // 상세정보
     TextView categoryTV;    // 카테고리
     TextView listComments;  // 코멘트
+    TextView SizeTV;        // 사이즈
+    
     ImageView imageIV;
 
     ListView coms;
@@ -105,8 +109,12 @@ public class ProductFrag extends Fragment {
             detail = bundle.getString("detail");
             imagename = bundle.getString("imagename");
             currID = bundle.getString("currentID");
+            plength = bundle.getDouble("length");
+            pheight = bundle.getDouble("height");
+            pwidth = bundle.getDouble("width");            
         }
 
+        String SizeInfo = "길이: " + plength + "높이: " + pheight + "길이: " + pwidth;
 
 
         titleTV = view.findViewById(R.id.title);
@@ -123,7 +131,7 @@ public class ProductFrag extends Fragment {
         postCom = view.findViewById(R.id.commentButton);
         coms = view.findViewById(R.id.commentList);
         arMode = view.findViewById(R.id.arMode);
-
+        SizeTV = view.findViewById(R.id.size);
 
         // intent로부터 받은 정보 텍스트뷰에 넣기
         titleTV.setText(title);
@@ -134,6 +142,7 @@ public class ProductFrag extends Fragment {
         categoryTV.setText(category);
         contactTV.setText(contact);
         detailTV.setText(detail);
+        SizeTV.setText(SizeInfo);
 
         // Instance of product comment section
         commentDatabase = FirebaseDatabase.getInstance().getReference("Comment"+"/"+pname);

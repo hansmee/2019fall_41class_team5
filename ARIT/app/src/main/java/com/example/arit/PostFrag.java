@@ -48,6 +48,8 @@ public class PostFrag extends Fragment {
     String detail;      // 상세정보
     String category;    // 카테고리
     String image;
+    public double length_size,height_size,width_size;
+
 
     Uri filepath;
     String photoname;
@@ -64,13 +66,17 @@ public class PostFrag extends Fragment {
 
         Button post_btn = view.findViewById(R.id.post_btn);
         Button get_image = view.findViewById(R.id.get_image);
+        Button measure = view.findViewById(R.id.Measure);
 
         final EditText titleET = view.findViewById(R.id.title);
         final EditText pnameET = view.findViewById(R.id.pname);
         final EditText priceET = view.findViewById(R.id.price);
         final EditText contactET = view.findViewById(R.id.contact);
         final EditText detailET = view.findViewById(R.id.detail);
-
+        final EditText lengthET = view.findViewById(R.id.LengthET);
+        final EditText heightET = view.findViewById(R.id.HeightET);
+        final EditText widthET = view.findViewById(R.id.WidthET);
+        
         final Spinner categorySP = view.findViewById(R.id.category);
         final Spinner howSP = view.findViewById(R.id.howto);
 
@@ -107,7 +113,11 @@ public class PostFrag extends Fragment {
                 detail = detailET.getText().toString();
                 how = howSP.getSelectedItem().toString();
                 category = categorySP.getSelectedItem().toString();
-
+                length_size = Double.parseDouble(lengthET.getText().toString());
+                height_size = Double.parseDouble(heightET.getText().toString());
+                width_size = Double.parseDouble(widthET.getText().toString());
+                
+                
                 // 사진 가져오기
                 if (filepath != null) {
                     storage = FirebaseStorage.getInstance();
@@ -141,6 +151,9 @@ public class PostFrag extends Fragment {
                 else if(detail.equals("")){
                     Toast.makeText(view.getContext(), "제품 상세정보를 입력해주세요.", Toast.LENGTH_SHORT).show();
                 }
+                else if(length_size * height_size * width_size == 0){
+                    Toast.makeText(view.getContext(), "제품 크기를 입력해주세요.", Toast.LENGTH_SHORT).show();
+                }                
                 else if(category.equals("카테고리 선택")){
                     Toast.makeText(view.getContext(), "카테고리를 선택해주세요.", Toast.LENGTH_SHORT).show();
                 }
@@ -170,7 +183,7 @@ public class PostFrag extends Fragment {
         Map<String, Object> value = null;
 
         if(add){
-            ProductItem product = new ProductItem(title, pname, uname, price, how, contact, detail, category, photoname);
+            ProductItem product = new ProductItem(title, pname, uname, price, how, contact, detail, category, photoname, length_size, height_size, width_size);
             value = product.toMap();
         }
         SimpleDateFormat formatter= new SimpleDateFormat("yyyyMMdd-HH-mm-ss-SSS", Locale.KOREA);
