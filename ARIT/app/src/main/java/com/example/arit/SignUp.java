@@ -1,9 +1,5 @@
 package com.example.arit;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +7,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -79,7 +79,7 @@ public class SignUp extends AppCompatActivity {
 
 
     public void checkandPost(final String testID, final String PW, final String NAME, final String PHONE, final Intent intent2) {
-        final ValueEventListener postListener = new ValueEventListener() {
+        uDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
@@ -92,12 +92,15 @@ public class SignUp extends AppCompatActivity {
 
                     if(check == 5){
                         Toast.makeText(SignUp.this, "Congratulations you have signed up to ARIT", Toast.LENGTH_SHORT).show();
-                        postUserInfo(idEdit.getText().toString(), passEdit.getText().toString(), nameEdit.getText().toString(), phoneEdit.getText().toString());
+
+                        String idFinal = idEdit.getText().toString();
+                        String nameFinal = nameEdit.getText().toString();
+                        postUserInfo(idFinal, passEdit.getText().toString(), nameFinal, phoneEdit.getText().toString());
                         flag = 1;
-                        intent2.putExtra("currentId", idEdit.getText().toString());
-                        intent2.putExtra("currentName", passEdit.getText().toString());
+                        intent2.putExtra("currentId", idFinal);
+                        intent2.putExtra("currentName", nameFinal);
                         startActivity(intent2);
-                        return;
+                        finish();
                     }
                     else{
                         if(check == 0){  Toast.makeText(SignUp.this, "ID must be at least 2 characters long", Toast.LENGTH_SHORT).show();    }
@@ -113,8 +116,7 @@ public class SignUp extends AppCompatActivity {
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {}
-        };
-        uDatabase.addValueEventListener(postListener);
+        });
     }
 
     private int checkSignup(String ID, String PW, String NAME, String PHONE) {

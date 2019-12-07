@@ -1,20 +1,21 @@
 package com.example.arit;
 
-import android.content.Context;
-import android.net.Uri;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -36,6 +37,12 @@ public class MypageFrag extends Fragment implements OnItemClick {
     String currentId;
     String currentName;
     String phoneNum;
+
+    Intent intent;
+    Button LogOut;
+
+    SharedPreferences loginPref;
+
 
     TextView phoneTV;
 
@@ -59,7 +66,7 @@ public class MypageFrag extends Fragment implements OnItemClick {
             currentName = extra.getString("currentName");
         }
 
-
+        LogOut = view.findViewById(R.id.logout_button);
         TextView idTV = view.findViewById(R.id.mypage_idTV);
         TextView nameTV = view.findViewById(R.id.mypage_nameTV);
         phoneTV = view.findViewById(R.id.mypage_phoneTV);
@@ -76,10 +83,36 @@ public class MypageFrag extends Fragment implements OnItemClick {
         nameTV.setText("NAME: " + currentName);
 
         getFirebaseDatabase(view, this);
+        intent = new Intent();
+        intent = intent.setClass(getActivity(), MainActivity.class);
+
+        LogOut.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+
+                loginPref = PreferenceManager.getDefaultSharedPreferences(view.getContext());
+                SharedPreferences.Editor editor = loginPref.edit();
+                editor.putString("userid", null);
+                editor.putString("userName", null);
+                editor.apply();
+
+                getActivity().startActivity(intent);
+                getActivity().finish();
+
+
+
+
+            }
+        });
+
+
 
 
         return view;
     }
+
+
 
     public void getPhoneNum() {
 
