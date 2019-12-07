@@ -4,7 +4,7 @@ Repository for team project by Team 5 (SWE3002-41)
 ## Subject
 ### ARIT is a Second-hand IT shopping mall
 
-<img src="https://github.com/skkuse02/2019fall_41class_team5/blob/master/docs/logo2.png" width="380" margin-left="100">
+<img src="https://github.com/skkuse02/2019fall_41class_team5/blob/master/docs/logo2.png" width="310" align-items="center">
 
 ARIT offers quick and easy access to both sell products and to buy products.
 The most unique part of ARIT is the fact that it integrates augmented reality.
