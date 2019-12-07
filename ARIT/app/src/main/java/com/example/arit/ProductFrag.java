@@ -17,7 +17,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
@@ -27,17 +26,13 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 
 
@@ -156,7 +151,7 @@ public class ProductFrag extends Fragment {
         SizeTV.setText(SizeInfo);
 
         // Instance of product comment section
-        commentDatabase = FirebaseDatabase.getInstance().getReference("Comment"+"/"+pname);
+        commentDatabase = FirebaseDatabase.getInstance().getReference("Comment"+"/"+imagename.split("\\.")[0]);
 
         // wishlist database
         wishDatabase = FirebaseDatabase.getInstance().getReference("wish/");
@@ -190,7 +185,8 @@ public class ProductFrag extends Fragment {
 
                 if(comment.getText().toString().length() > 0)
                 {
-                    postComment(pname, comment.getText().toString(), currID, pname);
+
+                    postComment(pname, comment.getText().toString(), currID);
                     getComments();
                 }
 
@@ -268,7 +264,7 @@ public class ProductFrag extends Fragment {
 
                 Log.e("tag", dataList.toString());
 
-                myAdapter = new MyAdapter(getActivity(), pname, (ArrayList) dataList, currID);
+                myAdapter = new MyAdapter(getActivity(), pname, (ArrayList) dataList, currID, imagename.split("\\.")[0]);
                 coms.setAdapter(myAdapter);
 
             }
@@ -281,7 +277,7 @@ public class ProductFrag extends Fragment {
 
 
     //////////////////////Post new user info to Firebase////////////////////////////////////////////
-    public void postComment(final String product, final String text, final String user, final String pname) {
+    public void postComment(final String product, final String text, final String user) {
         commentDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
