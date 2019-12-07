@@ -1306,7 +1306,6 @@ id center
 id center_horizontal
 id center_vertical
 id chains
-id chat_button
 id checkbox
 id checked
 id chronometer
@@ -1340,14 +1339,15 @@ id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
 id detail
-id dialog_button
 id dimensions
 id direct
 id disableHome
 id drawer
 id drawerlist
 id dynamic
+id edit
 id editText
+id edit_button
 id edit_phone_number
 id edit_query
 id email
@@ -1479,6 +1479,7 @@ id passText2
 id password
 id password_layout
 id percent
+id phone
 id phoneEdit
 id phone_button
 id phone_layout

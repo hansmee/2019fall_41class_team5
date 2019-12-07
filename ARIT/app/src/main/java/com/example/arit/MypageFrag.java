@@ -1,10 +1,13 @@
 package com.example.arit;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -12,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,12 +41,20 @@ public class MypageFrag extends Fragment implements OnItemClick {
     String currentName;
     String phoneNum;
 
+    TextView idTV;
+    TextView nameTV;
     TextView phoneTV;
 
     DatabaseReference mPostReference;
     ArrayList<ProductItem> products;
     MypageAdapter productAdapter;
     ListView recent;
+
+    Button edit_userinfo;
+
+    OnItemClick listener;
+
+    private static final int DIALOG_REQUEST_CODE = 1234;
 
 
     @Override
@@ -59,9 +71,16 @@ public class MypageFrag extends Fragment implements OnItemClick {
             currentName = extra.getString("currentName");
         }
 
+        edit_userinfo = view.findViewById(R.id.edit_button);
+        edit_userinfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                show();
+            }
+        });
 
-        TextView idTV = view.findViewById(R.id.mypage_idTV);
-        TextView nameTV = view.findViewById(R.id.mypage_nameTV);
+        idTV = view.findViewById(R.id.mypage_idTV);
+        nameTV = view.findViewById(R.id.mypage_nameTV);
         phoneTV = view.findViewById(R.id.mypage_phoneTV);
 
         recent = view.findViewById(R.id.product_list);
@@ -74,6 +93,7 @@ public class MypageFrag extends Fragment implements OnItemClick {
 
         idTV.setText("ID: " + currentId);
         nameTV.setText("NAME: " + currentName);
+        listener = this;
 
         getFirebaseDatabase(view, this);
 
@@ -136,6 +156,8 @@ public class MypageFrag extends Fragment implements OnItemClick {
                         // 해당 글 클릭하면 상세 정보 화면으로 넘어가도록 (ProductDetail.java)
                         Bundle productInfo = new Bundle();
 
+                        Log.d("click!!!!!!!!", "click!!!!!!!");
+
                         productInfo.putString("currentID", currentId);
                         productInfo.putString("currentName", currentName);
                         productInfo.putString("title", products.get(i).getTitle());
@@ -174,6 +196,47 @@ public class MypageFrag extends Fragment implements OnItemClick {
 
         Toast.makeText(getActivity(), "삭제되었습니다.", Toast.LENGTH_SHORT).show();
         getFirebaseDatabase(getView(), this);
+    }
+
+    public void show(){
+
+        DialogFragment newFragment = new CustomDialog();
+        newFragment.setTargetFragment(this, DIALOG_REQUEST_CODE );
+        newFragment.show(getFragmentManager(), "dialog");
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == DIALOG_REQUEST_CODE) {
+
+            if (resultCode == Activity.RESULT_OK) {
+                String name = data.getExtras().getString("name");
+                String pass = data.getExtras().getString("password");
+                String phone = data.getExtras().getString("phone");
+
+                Toast.makeText(getActivity(), "회원 정보가 수정되었습니다.",Toast.LENGTH_LONG).show();
+
+                DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("user");
+                Map<String, Object> update = new HashMap<>();
+                Map<String, Object> post = new HashMap<>();
+                post.put("id", currentId);
+                post.put("name", name);
+                post.put("numphone", phone);
+                post.put("pw", pass);
+                update.put("/" + currentId, post);
+                ref.updateChildren(update);
+
+                idTV.setText("ID: "+ currentId);
+                nameTV.setText("NAME: " + name);
+                phoneTV.setText("PHONE: " + phone);
+
+                getFirebaseDatabase(getView(), listener);
+
+
+            }
+        }
     }
 
 }
