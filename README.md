@@ -13,10 +13,10 @@ ARIT offers an easy and intuitive solution.
 
 
 ## Team Members
-- 손하민(https://github.com/sonhamin)
-- 이홍균(https://github.com/hyunmook-lim)
-- 임현묵(https://github.com/LeeHongGyun)
-- 한상미(https://github.com/hansmee)
+- 손하민 [@sonhamin](https://github.com/sonhamin)
+- 이홍균 [@hyunmook-lim](https://github.com/hyunmook-lim)
+- 임현묵 [@LeeHongGyun](https://github.com/LeeHongGyun)
+- 한상미 [@hansmee](https://github.com/hansmee)
 
 
 ## Sources
@@ -24,3 +24,7 @@ ARIT offers an easy and intuitive solution.
 Android Studio (>= 3.1) <br />
 Android Version (>= 7.0) <br />
 SDK Version (>= 26) <br />
+
+1. Download Android Studio
+2. Import proejct - ARIT
+3. Build and Run
